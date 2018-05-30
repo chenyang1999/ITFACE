@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纳新报名表</title>
+	<link rel="stylesheet" href="../css/apform.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header"></div>
+		<div class="body">
+			<div class="logo"><a href=""><img src="../images/logo.png" alt=""></a></div>
+			<h1 class="formheader">爱特工作室2018秋季招新报名表</h1>
+			<div class="verify">
+
+				<h2>请输入短信中含有的身份码</h2>
+				<div class="inputwrap"><input type="text"></div>
+				<button class="check"></button>
+				<button class="back"></button>
+
+			</div>
+			<form action="" method="post" id="apform" style="display: none;">
+				
+				
+				<div class="bodywrap">
+					<div class="formbody">
+						<div class="basic_info">
+							<div>姓名</div>
+							<input type="text" class="name">
+							<div style="clear: both;"></div>
+						</div>
+						<div class="basic_info clearfix">
+							<div>专业</div>
+							<input type="text" class="profession">
+						</div>
+						<div class="basic_info clearfix">
+							<div>QQ</div>
+							<input type="text" class="qq">
+						</div>
+						<div class="basic_info clearfix">
+							<div>手机</div>
+							<input type="text" class="phonenumber">
+						</div>
+						<div class="intention clearfix">
+							<h2>请选择意向部门</h2>
+							<ul>
+								<li>前端部门</li>
+								<li>UI部门</li>
+								<li>程序部门</li>
+								<li>安卓部门</li>
+							</ul>
+						</div>
+						<div class="intention_choose"></div>
+						<div class="self_introduction">
+							<div>个人简介</div>
+							<textarea name="introduction" id="" cols="" rows="" class="introduction"></textarea>
+							<div class="tip">（不要超过200字）</div>
+						</div> 
+						<div class="buttonwrap">
+							
+							<button class="form_submit" type="submit"></button>
+							<button class="check"></button>
+						</div>
+						
+					</div>
+
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/apform.js"></script>
+</html>

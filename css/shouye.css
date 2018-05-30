@@ -1,0 +1,24 @@
+
+input{
+	outline: none;
+}
+
+li{
+	list-style: none;
+}
+textarea{
+	outline: none;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.{
+	padding: 0px;
+	margin:0px;
+	font-family: MicrosoftYaHei;
+}
+.container{
+	
+}

@@ -1,0 +1,159 @@
+
+input{
+	outline: none;
+}
+
+li{
+	list-style: none;
+}
+textarea{
+	outline: none;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+*{
+	padding: 0px;
+	margin:0px;
+	font-family: MicrosoftYaHei;
+}
+.container{
+	overflow: hidden;
+	position: relative;
+}
+/*.event{
+	position: absolute;
+	left: 50%;
+	margin-left: -40px;
+	top: 70px;
+}
+.event_clock{
+	width:74px;
+	height:74px; 
+	z-index: 10;
+	background:rgba(255,255,255,1);
+	border-radius: 80px;
+	border: solid 3px #cccccc;
+	opacity: 0;
+}
+.block_line{
+	width: 3px;
+	height: 835px;
+	position: absolute;
+	left: 50%;
+	margin-left: -1.5px;
+	background-color: #cccccc;
+}*/
+
+.background{
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -33.5%;
+}
+.background img{
+	width: 1285px;
+	height: auto;
+}
+#ss{
+	width: 2px;
+	height: 200px;
+	background-color: black;
+	transform-origin: 
+	/*transform: rotate(45deg);*/
+}
+
+.plate .pole{
+	width: 2px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	margin-top: 500px;
+	margin-left: -1px;
+	background-color: #458bac;
+	transform-origin: bottom right;
+	z-index: -10;	
+
+}
+/*.plate {
+	width: 2px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	margin-top: 500px;
+	margin-left: -1px;
+	background-color: #458bac;
+	transform-origin: bottom right -1px;
+	z-index: -10;	
+
+}*/
+/*.plates{
+	overflow: hidden;
+}*/
+/*.pole{
+	width: 4px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	margin-top: 500px;
+	/*background-color: #458bac;*/
+	/*background-color: red;
+	transform-origin: bottom right -1px;
+
+}*/
+/*.plate:nth-child(1)
+{
+	transform: rotate(-30deg);
+	
+}
+.plate:nth-child(2)
+{
+	transform: rotate(-15deg);
+	
+}
+.plate:nth-child(3)
+{
+	transform: rotate(0deg);
+	
+}
+.plate:nth-child(4)
+{
+	transform: rotate(15deg);
+	
+}
+.plate:nth-child(5)
+{
+	transform: rotate(30deg);
+	
+}*/
+
+.plate .board{
+	width: 117px;
+	height: 72px;
+	border-radius: 10px;
+	border: solid 2px #458bac;
+	position: absolute;
+	/*top: 0px;*/
+	/*margin-top: -72px;*/
+	left: 50%;
+	margin-left: -58.5px;
+	text-align: center;
+	line-height: 72px;
+	background-color: red;
+	/*transform-origin: 50%*/
+
+}
+
+.sss{
+	position: absolute;
+	left: 100px;
+	top: 400px;
+	width: 200px;
+	height: 200px;
+	background-color: red;
+}
