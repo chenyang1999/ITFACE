@@ -29,6 +29,7 @@ window.onload = function() {
 
 	$pole = $(".plate .pole"); // 杆子
 	$board = $(".plate .board"); //牌子
+	$plate = $(".plate") // all
 	var userAgent = navigator.userAgent.toLowerCase();
 	// Figure out what browser is being used
 	jQuery.browser = {
@@ -116,18 +117,16 @@ window.onload = function() {
 				'bottom': r - 0 + plate_L
 			})
 			$(".plate .board").css({
-				'transform-origin': 'center ' + (olate_H + r + plate_L) + 'px'
+				'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
 			})
 
-
+//
 
 		});
 
 	} else {
 
 	}
-
-
 
 
 
@@ -170,44 +169,145 @@ window.onload = function() {
 
 	//用来控制旋转
 	//以顺时针为正 v
-	function rorate_plate(a,n,) {
-		
-		let b =0;
-		let v = 1; // 可以理解为速度
 
-		let t = setInterval(function() {
-			if (a == b - v) {
-				clearInterval(t)
-			}
-			a += v;
-			$pole.eq(n).css({
-				'transform': 'rotate(' + a + 'deg)'
-			})
-			$board.eq(n).css({
-				'transform': 'rotate(' + a + 'deg)'
-			})
-		}, 50)
+
+	//a为初始位置，n为其对应的index，len为旋转的长度，b为最终要旋转到的位置
+	function rorate_plate(a, n, length) {
+
+		let b; //记录最终到达的角度
+		b = a + length;
+		// console.log("第" + n + "个元素b=" + b + "a=" + a)
+		let v = 1; // 可以理解为速度
+		//首先要确定是否要移动
+		if (a != b) {
+
+			let t = setInterval(function() {
+				//这里分两种情况，一种是往左一种是往右
+				if (a < b) {
+					if (a == b - v) {
+
+						// console.log("第"+n+"个元素clear t")
+						clearInterval(t)
+					}
+					a += v;
+				} else if (a > b) {
+					if (a == b + v) {
+
+						// console.log("第"+n+"个元素clear t")
+						clearInterval(t)
+					}
+					a -= v;
+				}
+
+				// console.log("第"+n+"个元素"+a+","+"b-v="+(b-v))
+				//旋转牌子和杆子
+				$pole.eq(n).css({
+					'transform': 'rotate(' + a + 'deg)'
+				})
+				$board.eq(n).css({
+					'transform': 'rotate(' + a + 'deg)'
+				})
+			}, 20)
+		}
+
+	}
+
+
+
+	//转换一下矩阵的值，将其转换成角度
+
+	function getmatrix(a, b, c, d, e, f) {
+		let aa = Math.round(180 * Math.asin(a) / Math.PI);
+		let bb = Math.round(180 * Math.acos(b) / Math.PI);
+		let cc = Math.round(180 * Math.asin(c) / Math.PI);
+		let dd = Math.round(180 * Math.acos(d) / Math.PI);
+		let deg = 0;
+		if (aa == bb || -aa == bb) {
+			deg = dd;
+		} else if (-aa + bb == 180) {
+			deg = 180 + cc;
+		} else if (aa + bb == 180) {
+			deg = 360 - cc || 360 - dd;
+		}
+		return deg >= 360 ? 0 : deg;
+		//return (aa+','+bb+','+cc+','+dd);  
 	}
 
 
 
 	//用来控制点击时牌子的旋转
-	$(".plate,.board").click(function() {
-		click_degree();
+	//应该获取这个牌子现在的角度，以及它和0度的差值
+	//现在用另外一个len2和u2一直保存最左边的牌子的位置
+	$(".plate").click(function() {
+			let len;
+	let len2;
+	let u2;
+		let index = $plate.index(this);
+		let u = $board.eq(index).css('transform');
+		if (u != "none") {
+			let values = u.split('(')[1].split(')')[0].split(',');
+			let a = values[0];
+			let b = values[1];
+			let c = values[2];
+			let d = values[3];
+			u = getmatrix(a, b, c, d);
+		} else {
+			u = 0;
+		}
+		//返回了两种值，一种是在圆的左半部分，一种是在右半部分
+		//根据两种不同的情况分类
+		if (u > 180) {
+			len = u - 360;
+		} else {
+			len = u;
+		}
+
+
+		u2 = $board.eq(0).css('transform');
+		if (u2 != "none") {
+			let values = u2.split('(')[1].split(')')[0].split(',');
+			let a = values[0];
+			let b = values[1];
+			let c = values[2];
+			let d = values[3];
+			u2 = getmatrix(a, b, c, d);
+		} else {
+			u2 = 0;
+		}
+		//返回了两种值，一种是在圆的左半部分，一种是在右半部分
+		//根据两种不同的情况分类
+		if (u2 > 180) {
+			len2 = u2 - 360;
+		} else {
+			len2 = u2;
+		}
+		// console.log("len" + len)
+		// console.log("index" + index)
+		click_degree(index, len, len2);
 	})
 
-	function click_degree() {
+	function click_degree(index,len,len2) {
 		$plate = $(".plate");
-		
-		rorate_plate(-Degree * 2,0);
-		rorate_plate(-Degree ,1);
+		let location = [];
+		location[0] = len2;
+		location[1] = len2 + Degree;
+		location[2] = len2 + Degree * 2;
+		location[3] = len2 + Degree * 3;
+		location[4] = len2 + Degree * 4;
+		// console.log("location=" + location)
+
+
+
+		rorate_plate(location[0], 0, -len);
+		rorate_plate(location[1], 1, -len);
+		rorate_plate(location[2], 2, -len);
+		rorate_plate(location[3], 3, -len);
+		rorate_plate(location[4], 4, -len);
+
+
+
 	}
 
-
-	$(".sss").click(function() {
-		console.log("8888")
-		// alert("333")
-	})
 
 
 }
