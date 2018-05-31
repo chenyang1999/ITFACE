@@ -57,13 +57,7 @@ textarea{
 	width: 1285px;
 	height: auto;
 }
-#ss{
-	width: 2px;
-	height: 200px;
-	background-color: black;
-	transform-origin: 
-	/*transform: rotate(45deg);*/
-}
+
 
 .plate .pole{
 	width: 2px;
@@ -75,7 +69,8 @@ textarea{
 	margin-left: -1px;
 	background-color: #458bac;
 	transform-origin: bottom right;
-	z-index: -10;	
+	z-index: -10;
+
 
 }
 /*.plate {
@@ -156,4 +151,42 @@ textarea{
 	width: 200px;
 	height: 200px;
 	background-color: red;
+}
+
+.index_topic{
+	width:1067px; 
+	height:625px; 
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	z-index: 100;
+	position: absolute;
+	left: 50%;
+	margin-left: -533.5px;
+	top: 50%;
+	margin-top: -312.5px;
+	overflow: auto;
+}
+
+.event {
+	width: 720px;
+	min-height: 90px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	border: solid 2px #458bac;
+}
+.ball{
+	position: absolute;
+	left: 10%;
+	top: 30%;
+	width: 8%;
+	height: auto;
+}
+.ball img{
+	width: 100%;
+	height: auto;
+}
+.plate{
+	display: none;
 }
