@@ -42,8 +42,8 @@ window.onload = function() {
 	var H, W;
 	var h, w, r;
 	var plate_L, //记录牌子杆子的长度
-		Degree, //记录牌子偏转角度
-		plate_H = 72; // 记录牌子的高度
+		Degree = 12, //记录牌子偏转角度
+		plate_H; // 记录牌子的高度
 	if ($.browser.version != "7.0") //判断是不是IE7 ，IE7下不支持“$(window).width()”
 	{
 		H = $(window).height(); //获得窗口宽度
@@ -67,41 +67,50 @@ window.onload = function() {
 		// h = W * 0.67;
 		$(".background img").width(w);
 		r = (h / 2) + (w * w / (8 * h)); // 星球半径
+		plate_H = 0.0375 * W;
+		plate_L = 0.078 * W;
+		$board.css({
+			'width': W * 0.061 + 'px',
+			'margin-left': -0.0305 * W + 'px',
+			'height': 0.0305 * W + 'px',
+			'line-height': 0.0305 * W + 'px'
+
+		})
 		//控制牌子的偏转角度
-		if (W > '1550') {
-			Degree = 12;
-			plate_L = 150;
-		} else if (W >= '1250' && W <= '1550') {
-			Degree = 12;
-			plate_L = 100;
-			$(".plate .board").css({
-				'width': '100px',
-				'margin-left': '-50px',
-				'height': '60px',
-				'line-height': '60px'
+		// if (W > '1550') {
+		// 	Degree = 12;
+		// 	plate_L = 150;
+		// } else if (W >= '1250' && W <= '1550') {
+		// 	Degree = 12;
+		// 	plate_L = 121;
+		// 	$board.css({
+		// 		'width': '94.5px',
+		// 		'margin-left': '-47.25px',
+		// 		'height': '58px',
+		// 		'line-height': '58px'
 
-			})
-		} else if (W < '1250' && W > '1100') {
-			Degree = 13;
-			plate_L = 80;
-			$(".plate .board").css({
-				'width': '100px',
-				'margin-left': '-50px',
-				'height': '60px',
-				'line-height': '60px'
+		// 	})
+		// } else if (W < '1250' && W > '1000') {
+		// 	Degree = 12;
+		// 	plate_L = 97.5;
+		// 	$board.css({
+		// 		'width': '76px',
+		// 		'margin-left': '-38px',
+		// 		'height': '46px',
+		// 		'line-height': '46px'
 
-			})
-		} else if (W <= '1100') {
-			Degree = 13;
-			plate_L = 100;
-			$(".plate .board").css({
-				'width': '100px',
-				'margin-left': '-50px',
-				'height': '60px',
-				'line-height': '60px'
+		// 	})
+		// } else if (W <= '1000') {
+		// 	Degree = 10;
+		// 	plate_L = 78;
+		// 	$board.css({
+		// 		'width': '70px',
+		// 		'margin-left': '-35px',
+		// 		'height': '40px',
+		// 		'line-height': '40px'
 
-			})
-		}
+		// 	})
+		// }
 		//控制牌子相关参数
 		$(".plate .pole").css({
 			'bottom': h - r,
@@ -115,7 +124,7 @@ window.onload = function() {
 		})
 		//将牌子的偏转坐标移到正确的位置
 
-		$(".plate .board").css({
+		$board.css({
 			'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
 		})
 
@@ -126,42 +135,58 @@ window.onload = function() {
 			$(".container").width(W);
 			// w = W * 0.67;
 			$(".background img").width(w);
+			$board.css({
+				'width': W * 0.061 + 'px',
+				'margin-left': -0.0305 * W + 'px',
+				'height': 0.0305 * W + 'px',
+				'line-height': 0.0305 * W + 'px'
+
+			})
 			r = (h / 2) + (w * w / (8 * h)); // 星球半径
+			plate_H = 0.0375 * W;
+			plate_L = 0.078 * W;
+			$board.css({
+				'width': W * 0.061 + 'px',
+				'margin-left': -0.0305 * W + 'px',
+				'height': 0.0305 * W + 'px',
+				'line-height': 0.0305 * W + 'px'
+
+			})
 			//控制牌子的偏转角度
-			if (W > '1550') {
-				Degree = 12;
-				plate_L = 150;
-			} else if (W >= '1250' && W <= '1550') {
-				Degree = 12;
-				plate_L = 100;
-				$(".plate .board").css({
-					'width': '100px',
-					'margin-left': '-50px',
-					'height': '60px',
-					'line-height': '60px'
+			// if (W > '1550') {
+			// 	Degree = 12;
+			// 	plate_L = 150;
+			// } else if (W >= '1250' && W <= '1550') {
+			// 	Degree = 12;
+			// 	plate_L = 100;
+			// 	$(".plate .board").css({
+			// 		'width': '100px',
+			// 		'margin-left': '-50px',
+			// 		'height': '60px',
+			// 		'line-height': '60px'
 
-				})
-			} else if (W < '1250' && W > '1100') {
-				Degree = 13;
-				plate_L = 80;
-				$(".plate .board").css({
-					'width': '100px',
-					'margin-left': '-50px',
-					'height': '60px',
-					'line-height': '60px'
+			// 	})
+			// } else if (W < '1250' && W > '1100') {
+			// 	Degree = 13;
+			// 	plate_L = 80;
+			// 	$(".plate .board").css({
+			// 		'width': '100px',
+			// 		'margin-left': '-50px',
+			// 		'height': '60px',
+			// 		'line-height': '60px'
 
-				})
-			} else if (W <= '1100') {
-				Degree = 13;
-				plate_L = 100;
-				$(".plate .board").css({
-					'width': '100px',
-					'margin-left': '-50px',
-					'height': '60px',
-					'line-height': '60px'
+			// 	})
+			// } else if (W <= '1100') {
+			// 	Degree = 13;
+			// 	plate_L = 100;
+			// 	$(".plate .board").css({
+			// 		'width': '100px',
+			// 		'margin-left': '-50px',
+			// 		'height': '60px',
+			// 		'line-height': '60px'
 
-				})
-			}
+			// 	})
+			// }
 			//控制牌子相关参数
 			$(".plate .pole").css({
 				'bottom': h - r,
@@ -189,63 +214,54 @@ window.onload = function() {
 		//先把所有的位置都设置好
 		$pole.css({
 			'border-bottom': r + fall_length + 'px solid white',
-			'z-index':'-100'
+			'z-index': '-100'
 		})
 		$board.css({
 			'bottom': h - 0 + fall_length + plate_L,
 			'transform-origin': 'center ' + (plate_H + fall_length + r + plate_L) + 'px'
 		})
 		//每个牌子执行一次
+
+
 		
-			
-		// $plate.eq(0).show(function(){
-			// display(0);
-			// $plate.eq(1).show(function(){
-			// 	display(1);
-			// 	$plate.eq(2).show(function(){
-			// 		display(2);
-			// 		$plate.eq(3).show(function(){
-			// 			display(3);
-			// 			$plate.eq(4).show(function(){
-			// 				display(4)
-			// 			})
-			// 		})
-			// 	})
-			// })
+		// function fn2() {
+		// 	return new Promise(function(resolve, reject) {
 
-		// })
-// 		function f1(callback){
+		// 	})
+		// }
 
-// 　　　　setTimeout(function () {
-
-// 　　　　　display(0);
-
-// 　　　　　　callback();
-
-// 　　　　}, 1000);
-
-// 　　}
 		
-		display(0)
+}
+		
 
 		function display(index) {
-			$plate.eq(index).show();
-			let fall = fall_length
+
+			let flag = true;
+			let fall = fall_length;
 			let fall_v = 0; // 记录下落的速度
 			let t2 = setInterval(function() {
-				$pole.css({
+				$pole.eq(index).css({
 					'border-bottom': r + fall + 'px solid white',
-					
+
 				})
 				$board.eq(index).css({
 					'bottom': h - 0 + fall + plate_L,
 					'transform-origin': 'center ' + (plate_H + fall + r + plate_L) + 'px'
 				})
+				$plate.eq(index).show();
 				fall_v += 10;
-				fall -= 0.5 * fall_v;
+				fall -= fall_v;
 				// console.log("fall"+fall)
 				if (fall <= 0) {
 					clearInterval(t2);
+					if (flag && index < 4) {
+
+						setTimeout(function() {
+							display(index + 1);
+							flag = false;
+						}, 30);
+
+					}
 					$pole.css({
 						'border-bottom': r + 'px solid white'
 					})
@@ -254,15 +270,14 @@ window.onload = function() {
 						'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
 					})
 				}
-			}, 100)
-			
-			display(1);
-			
+			}, 20)
+
 		}
 
+displayplate();
+	display(0);
+	
 
-	}
-	displayplate();
 	//该函数用来控制初始偏转的角度
 	function initial_degree() {
 		//初始化杆子

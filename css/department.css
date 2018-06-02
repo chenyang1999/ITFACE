@@ -1,0 +1,107 @@
+input{
+	outline: none;
+}
+
+li{
+	list-style: none;
+}
+textarea{
+	outline: none;
+}
+button{
+	outline: none;
+}
+.clearfix2::before {
+    content: "";
+    clear: both;
+    display: table;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+*{
+	padding: 0px;
+	margin:0px;
+	font-family: MicrosoftYaHei;
+}
+.container{
+	/*background-image: url();
+	background-repeat: no-repeat;
+	background-size: cover;
+*/
+}
+.back{
+	width: 100%;
+	/*height: */
+}
+.ball .front_end{
+	width: 11%;
+	height: 8.8%;
+	position: absolute;
+	top: 12.9%;
+	left: 30.05%;
+
+}
+
+.ball .front_end img:nth-child(2),.ball .app img:nth-child(2),.ball .ui img:nth-child(2),.ball .program img:nth-child(2){
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -60px;
+	margin-top: -60px;
+	display: none;
+}
+.ball .ui{
+	width: 9.06%;
+	height: 9.06%;
+	position: absolute;
+	top: 531px;
+	left: 57.44%;
+	/*transform: rotate(-35deg);*/
+	
+}
+
+.ball .app{
+	width: 9.06%;
+	height: 9.06%;
+	position: absolute;
+	top: 484px;
+	left: 83.17%;
+
+
+}
+
+.ball .program
+{
+	width: 9.06%;
+	height: 9.06%;
+	position: absolute;
+	top: 235px;
+	left: 67.8%;
+	
+
+}
+.ball .front_end img:nth-child(1){
+	width: 100%;
+	height: auto;
+}
+.ball .app img:nth-child(1),.ball .program img:nth-child(1),.ball .ui img:nth-child(1){
+	width: 100%;
+	height: auto;
+}
+.ball .name{
+	position: absolute;
+	bottom: -50px;
+	left: 50%;
+	margin-left: -51px;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 2px;
+	color: #ffffff;
+
+}

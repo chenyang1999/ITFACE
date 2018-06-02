@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+.container{
+	width: 100%;
+	height: 1000px;
+}
+	.aa{
+		width: 20px;
+		height:20px;
+		background-color: red;
+		position: absolute;
+		left: 983px;
+		top: 450px;
+		transform: rotate(35deg);
+	}
+</style>
+<body>
+	<div class="container">
+		<div class="aa"> </div>
+	</div>
+</body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+	var y= parseInt($(".aa").css("top"));
+	var x = Math.sqrt((1.07e11-243049*(x-683)*(x-683))/443556);
+	let yuanx = 683;
+	let yuany = 500;
+	let short = 493;
+	let long =666;
+	let short2 = short*short;
+	let long2 = long*long;
+	
+	
+	function fn(){
+		let b=650;
+		let t=setInterval(function(){
+			b-=1;
+			x = Math.sqrt((1.07e11-long2*(b-yuany)*(b-yuany))/short2);
+			
+			//在第一象限的情况
+			// if(y<yuany)
+			// {
+				$(".aa").css({
+					'top':b,
+					'left':x+short
+				})
+			// }
+			//在第四象限的情况
+			// else if(y>yuany)
+			// {
+			// 	$(".aa").css({
+			// 		'top':b
+
+			// 	})
+			// }
+
+			// if(y<yuany)
+			// {
+			// 	$(".aa").css({
+			// 	'left': b,
+			// 	'top':500-y
+			// })
+			// }
+			// else if(yuany>y)
+			// {
+			// 	$(".aa").css({
+			// 		'left':b,
+			// 		'top':
+			// 	})
+			// }
+			
+			console.log();
+		},20)
+	}
+	fn();
+</script>
+</html>

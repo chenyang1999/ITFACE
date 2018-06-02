@@ -139,23 +139,30 @@ textarea{
 	margin-left: -58.5px;
 	text-align: center;
 	line-height: 72px;
-	background-color: red;
+
 	/*transform-origin: 50%*/
 
 }
 
-.sss{
-	position: absolute;
-	left: 100px;
-	top: 400px;
-	width: 200px;
-	height: 200px;
-	background-color: red;
-}
 
+
+.ball{
+	position: absolute;
+	left: 10%;
+	top: 30%;
+	width: 8%;
+	height: auto;
+}
+.ball img{
+	width: 100%;
+	height: auto;
+}
+.plate{
+	display: none;
+}
 .index_topic{
-	width:1067px; 
-	height:625px; 
+	width: 1067px;
+	height: 625px;
 	background-color: rgba(255, 255, 255, 0.85);
 	border-radius: 10px;
 	border: solid 2px rgba(69, 139, 172, 0.85);
@@ -175,18 +182,6 @@ textarea{
 	background-color: #ffffff;
 	border-radius: 10px;
 	border: solid 2px #458bac;
-}
-.ball{
-	position: absolute;
-	left: 10%;
-	top: 30%;
-	width: 8%;
-	height: auto;
-}
-.ball img{
-	width: 100%;
-	height: auto;
-}
-.plate{
-	display: none;
+	margin: 0px auto;
+	margin-bottom: 29px;
 }
