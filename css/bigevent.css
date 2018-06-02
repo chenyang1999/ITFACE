@@ -14,6 +14,16 @@ textarea{
     clear: both;
     display: table;
 }
+.clearfix2::before {
+    content: "";
+    clear: both;
+    display: table;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 *{
 	padding: 0px;
 	margin:0px;
@@ -174,14 +184,43 @@ textarea{
 	top: 50%;
 	margin-top: -312.5px;
 	overflow: auto;
+	padding: 85px 0px 85px 0px;
 }
 
 .event {
-	width: 720px;
-	min-height: 90px;
+	width: 660px;
+	/*width: 100%;*/
+	min-height: 44px;
 	background-color: #ffffff;
 	border-radius: 10px;
 	border: solid 2px #458bac;
-	margin: 0px auto;
+	padding: 23px 30px 23px 30px;
 	margin-bottom: 29px;
+	
+}
+.year2016{
+	width: 1067px;
+	height: 625px;
+	position: absolute;
+	left: 50%;
+	margin-left: -533.5px;
+	top: 50%;
+	margin-top: -312.5px;
+}
+.year {
+
+	font-family: Moon2.0-Bold;
+	font-size: 28px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 2px;
+	color: #458bac;
+	position: absolute;
+	left: 86px;
+	top: 58px;
+}
+.close{
+	position: absolute;
+	top: 19px;
+	right: 19px;
 }
