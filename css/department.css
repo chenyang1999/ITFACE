@@ -27,6 +27,8 @@ button{
 	font-family: MicrosoftYaHei;
 }
 .container{
+	position: relative;
+	overflow: hidden;
 	/*background-image: url();
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -35,6 +37,7 @@ button{
 .back{
 	width: 100%;
 	/*height: */
+	z-index: 0;
 }
 .ball .front_end{
 	width: 11%;
@@ -42,18 +45,30 @@ button{
 	position: absolute;
 	top: 12.9%;
 	left: 30.05%;
-
 }
-
-.ball .front_end img:nth-child(2),.ball .app img:nth-child(2),.ball .ui img:nth-child(2),.ball .program img:nth-child(2){
-	width: 100%;
+.ball .front_end img:nth-child(1)
+{
+	width: 60%;
 	height: auto;
 	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -60px;
-	margin-top: -60px;
-	display: none;
+	left: 20%;
+	top: 11%;
+	/*margin-left: -30%;*/
+	/*margin-top: -60px;*/
+	z-index: 300;
+}
+.front_end .black{
+
+	width: 78%;
+	height:95%;
+	position: absolute;
+	left: 11%;
+	top: 3%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.3;
+	z-index: 200;
+	/*display: none;*/
 }
 .ball .ui{
 	width: 9.06%;
@@ -61,18 +76,83 @@ button{
 	position: absolute;
 	top: 531px;
 	left: 57.44%;
-	/*transform: rotate(-35deg);*/
-	
+	/*transform: rotate(-35deg);*/	
 }
-
+.ball .ui .name{
+	margin-left: -41px;
+}
+.ui .black{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.5;
+	z-index: 200;
+}
+.ball .ui img:nth-child(1){
+	width: 76%;
+	height: auto;
+	position: absolute;
+	left: 13%;
+	top: 11%;
+	z-index: 300;
+}
 .ball .app{
 	width: 9.06%;
 	height: 9.06%;
 	position: absolute;
 	top: 484px;
 	left: 83.17%;
+}
+.ball .program img:nth-child(1){
+	width: 79%;
+	position: absolute;
+	height: auto;
+	left: 11%;
+	top: 10%;
+	z-index: 300;
+}
+.program .black{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.5;
+	z-index: 200;
+}
 
+.ball .app img:nth-child(1){
+	width: 79%;
+	height: auto;
+	position: absolute;
+	left: 10%;
+	top: 11%;
+	z-index: 300;
 
+}
+.app .black{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.4;
+	z-index: 200;
+
+}
+
+.ball .front_end img:nth-child(3),.ball .app img:nth-child(3),.ball .ui img:nth-child(3),.ball .program img:nth-child(3){
+	width: 100%;
+	height: auto;
+	
 }
 
 .ball .program
@@ -85,14 +165,7 @@ button{
 	
 
 }
-.ball .front_end img:nth-child(1){
-	width: 100%;
-	height: auto;
-}
-.ball .app img:nth-child(1),.ball .program img:nth-child(1),.ball .ui img:nth-child(1){
-	width: 100%;
-	height: auto;
-}
+
 .ball .name{
 	position: absolute;
 	bottom: -50px;
@@ -103,5 +176,87 @@ button{
 	font-stretch: normal;
 	letter-spacing: 2px;
 	color: #ffffff;
+
+}
+.person img{
+	width: 9.2%;
+	height: auto;
+	position: absolute;
+	left: 9.1%;
+	bottom: 17%;
+
+}
+.person img{
+	z-index: 100;
+}
+.ball .black{
+	/*opacity: 0;*/
+	/*visibility: hidden;*/
+	display: none;
+}
+.logo{
+	opacity: 0;
+}
+h1{
+
+	font-size: 28px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 2px;
+	color: white;
+	text-align: center;
+	z-index: 300;
+	position: absolute;
+	top: 4.8%;
+	left: 50%;
+	margin-left: -59px;
+}
+.line{
+	width: 60px;
+	height: 4px;
+	background-color: #face6f;
+	text-align: center;
+	position: absolute;
+	top: 7.3%;
+	left: 50%;
+	margin-left: -30px;
+	z-index: 300;
+
+}
+.person{
+	/*display: none;*/
+	opacity: 0;
+}
+.baller:hover{
+	cursor: pointer;;
+}
+
+/*.ui,.app,.program,.front_end{
+	opacity: 0;
+}*/
+
+.depart_intro .front_end{
+
+	width: 650px;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 50%;
+	margin-left: -300px;
+	top: 50%;
+	margin-top: -170px;
+}
+.depart_intro .front_end h3{
+	width: 102px;
+	height: 24px;
+	font-family: MicrosoftYaHei;
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 2px;
+	text-align: center;
 
 }

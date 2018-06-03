@@ -20,23 +20,20 @@ CONTENTS:
 ------------------------------------------------------------------------------------------------------------------------
 */
 
+.index_topic{ width:300px; height:400px; margin:50px auto; padding:20px; background:#FAFAFA;}
+.index_topic .mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail, .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail{ height:400px;}
 
 
-
-
-
-	.mCustomScrollbar{ -ms-touch-action: pinch-zoom; touch-action: pinch-zoom; /* direct pointer events to js */  }
+	.mCustomScrollbar{ -ms-touch-action: pinch-zoom; touch-action: pinch-zoom; /* direct pointer events to js */ border: 1px solid #808080; }
 	.mCustomScrollbar.mCS_no_scrollbar, .mCustomScrollbar.mCS_touch_action{ -ms-touch-action: auto; touch-action: auto; }
 	
 	.mCustomScrollBox{ /* contains plugin's markup */
 		position: relative;
 		overflow: hidden;
 		height: 100%;
-		max-width: 74%;
+		max-width: 100%;
 		outline: none;
 		direction: ltr;
-		margin: 0px auto;
-		padding-left: 15px;
 	}
 
 	.mCSB_container{ /* contains the original content */
@@ -44,16 +41,8 @@ CONTENTS:
 		width: auto;
 		height: auto;
 	}
-	.mCS-rounded-dots{
-		max-width: 100%;
-	}
-/*	.mCS-light{
-		margin-top: 85px;
-	}
-	.mCSB_scrollTools{
-		margin-top: -42.5px;
-	}
-*/
+
+
 
 /* 
 ------------------------------------------------------------------------------------------------------------------------
@@ -62,7 +51,7 @@ y-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
 
-	.mCSB_inside > .mCSB_container{ margin-right: 22px; }
+	.mCSB_inside > .mCSB_container{ margin-right: 30px; }
 
 	.mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden{ margin-right: 0; } /* non-visible scrollbar */
 	
@@ -183,12 +172,8 @@ x-axis
 		height: 2px;
 		margin: 7px 0;
 	}
-	.mCSB_dragger{
-		width: 30px;
-		height: 30px;
-		left: 0px;
-	}
-	.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+
+	.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger{
 		width: 30px; /* minimum dragger width */
 		height: 100%;
 		left: 0;
@@ -370,12 +355,12 @@ yx-axis
 	}
 
 	.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
-		background-color: #fff; background-color: #458bac;
+		background-color: #fff; background-color: rgba(255,98,0,1);
 		filter: "alpha(opacity=85)"; -ms-filter: "alpha(opacity=85)"; 
 	}
 	.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 	.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
-		background-color: #fff; background-color:#458bac;
+		background-color: #fff; background-color: rgba(255,98,0,.9);
 		filter: "alpha(opacity=90)"; -ms-filter: "alpha(opacity=90)"; 
 	}
 
@@ -1280,7 +1265,3 @@ yx-axis
 	.mCS-inset-3-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #fff; background-color: rgba(255,255,255,0.9); }
 	
 	/* ---------------------------------------- */
-
-.mCSB_1_container{
-	top: 85px;
-}

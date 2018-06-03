@@ -1,35 +1,11 @@
-// var H; //记录窗口高度
-// var W; // 记录窗口宽度
-// //判断是不是IE7 ，IE7下不支持“$(window).width()”
-// H = $(window).height(); //获得窗口宽度
-// W = $(window).width(); //获得窗口高度
-// $(window).resize(function() { //浏览器缩放重新获得窗口宽高
-// 	H = $(window).height();
-// 	W = $(window).width();
-// });
 
-// var space; //记录两个时间表之间的距离
-// var clock_size = 80; //记录一个钟表的大小
-// var clock_amount = 5; // 记录钟表的数目
-// var clock_top = 70; // 记录钟表上引入线的长度
-// // clock_size = $(".event_clock").width()-0 + ( $(".event_clock").css("border")-0)*2;
-// clock_size = 80;
-// space = (H - clock_amount * clock_size) / 4;
-
-
-// var $line = $(".block_line");
-// var $clock = $(".event_clock");
-
-
-// 	$line.animate({'height':clock_top}, 1000,function(){
-// 		$clock.eq(0).animate({'opacity':'1'},1000)
-
-// 	});
 window.onload = function() {
-
+	$baller = $(".ball");
 	$pole = $(".plate .pole"); // 杆子
 	$board = $(".plate .board"); //牌子
 	$plate = $(".plate") // all
+	$eventboard = $(".yearevent"); //
+	$eventtext = $(".eventwrap .index_topic"); //
 	var userAgent = navigator.userAgent.toLowerCase();
 	// Figure out what browser is being used
 	jQuery.browser = {
@@ -72,61 +48,34 @@ window.onload = function() {
 		$board.css({
 			'width': W * 0.061 + 'px',
 			'margin-left': -0.0305 * W + 'px',
-			'height': 0.0305 * W + 'px',
-			'line-height': 0.0305 * W + 'px'
+			'height': 0.0375 * W + 'px',
+			'line-height': 0.0375 * W + 'px',
+			'bottom': h - 0 + plate_L,
+			'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
 
 		})
-		//控制牌子的偏转角度
-		// if (W > '1550') {
-		// 	Degree = 12;
-		// 	plate_L = 150;
-		// } else if (W >= '1250' && W <= '1550') {
-		// 	Degree = 12;
-		// 	plate_L = 121;
-		// 	$board.css({
-		// 		'width': '94.5px',
-		// 		'margin-left': '-47.25px',
-		// 		'height': '58px',
-		// 		'line-height': '58px'
+		$eventboard.css({
+			'width': W * 0.061 + 'px',
+			'height': 0.0375 * W + 'px',
+			'bottom': h - 0 + plate_L,
+			'margin-left': -0.0305 * W + 'px',
+			'line-height': 0.0375 * W + 'px',
+			'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
 
-		// 	})
-		// } else if (W < '1250' && W > '1000') {
-		// 	Degree = 12;
-		// 	plate_L = 97.5;
-		// 	$board.css({
-		// 		'width': '76px',
-		// 		'margin-left': '-38px',
-		// 		'height': '46px',
-		// 		'line-height': '46px'
+		})
 
-		// 	})
-		// } else if (W <= '1000') {
-		// 	Degree = 10;
-		// 	plate_L = 78;
-		// 	$board.css({
-		// 		'width': '70px',
-		// 		'margin-left': '-35px',
-		// 		'height': '40px',
-		// 		'line-height': '40px'
-
-		// 	})
-		// }
 		//控制牌子相关参数
-		$(".plate .pole").css({
+		$pole.css({
 			'bottom': h - r,
 			'height': plate_L,
 			'border-bottom': r + 'px solid white'
 		})
 		//控制牌子的角度
 		initial_degree();
-		$(".board").css({
-			'bottom': h - 0 + plate_L
-		})
+
 		//将牌子的偏转坐标移到正确的位置
 
-		$board.css({
-			'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
-		})
+	
 
 
 
@@ -138,8 +87,8 @@ window.onload = function() {
 			$board.css({
 				'width': W * 0.061 + 'px',
 				'margin-left': -0.0305 * W + 'px',
-				'height': 0.0305 * W + 'px',
-				'line-height': 0.0305 * W + 'px'
+				'height': 0.0375 * W + 'px',
+				'line-height': 0.0375 * W + 'px'
 
 			})
 			r = (h / 2) + (w * w / (8 * h)); // 星球半径
@@ -148,57 +97,34 @@ window.onload = function() {
 			$board.css({
 				'width': W * 0.061 + 'px',
 				'margin-left': -0.0305 * W + 'px',
-				'height': 0.0305 * W + 'px',
-				'line-height': 0.0305 * W + 'px'
+				'height': 0.0375 * W + 'px',
+				'line-height': 0.0375 * W + 'px',
+				'bottom': h - 0 + plate_L,
+				'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
 
 			})
-			//控制牌子的偏转角度
-			// if (W > '1550') {
-			// 	Degree = 12;
-			// 	plate_L = 150;
-			// } else if (W >= '1250' && W <= '1550') {
-			// 	Degree = 12;
-			// 	plate_L = 100;
-			// 	$(".plate .board").css({
-			// 		'width': '100px',
-			// 		'margin-left': '-50px',
-			// 		'height': '60px',
-			// 		'line-height': '60px'
 
-			// 	})
-			// } else if (W < '1250' && W > '1100') {
-			// 	Degree = 13;
-			// 	plate_L = 80;
-			// 	$(".plate .board").css({
-			// 		'width': '100px',
-			// 		'margin-left': '-50px',
-			// 		'height': '60px',
-			// 		'line-height': '60px'
-
-			// 	})
-			// } else if (W <= '1100') {
-			// 	Degree = 13;
-			// 	plate_L = 100;
-			// 	$(".plate .board").css({
-			// 		'width': '100px',
-			// 		'margin-left': '-50px',
-			// 		'height': '60px',
-			// 		'line-height': '60px'
-
-			// 	})
-			// }
 			//控制牌子相关参数
-			$(".plate .pole").css({
+			$pole.css({
 				'bottom': h - r,
 				'height': plate_L,
 				'border-bottom': r + 'px solid white'
 			})
 			//控制牌子的角度
 			initial_degree();
-			$board.css({
-				'bottom': h - 0 + plate_L,
-				'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
-			})
+		// 	$eventboard.css({
+		// 	'width': W * 0.061 + 'px',
+		// 	'height': 0.0305 * W + 'px',
+		// 	'bottom': h - 0 + plate_L,
+		// 	'margin-left': -0.0305 * W + 'px',
+		// 	'line-height': 0.0305 * W + 'px',
+		// 	'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
+
+		// })
+
+		//将牌子的偏转坐标移到正确的位置
+
+
 
 
 		});
@@ -214,69 +140,60 @@ window.onload = function() {
 		//先把所有的位置都设置好
 		$pole.css({
 			'border-bottom': r + fall_length + 'px solid white',
-			'z-index': '-100'
+			'z-index': '1'
 		})
 		$board.css({
 			'bottom': h - 0 + fall_length + plate_L,
 			'transform-origin': 'center ' + (plate_H + fall_length + r + plate_L) + 'px'
 		})
-		//每个牌子执行一次
-
-
-		
-		// function fn2() {
-		// 	return new Promise(function(resolve, reject) {
-
-		// 	})
-		// }
-
-		
-}
 		
 
-		function display(index) {
+	}
 
-			let flag = true;
-			let fall = fall_length;
-			let fall_v = 0; // 记录下落的速度
-			let t2 = setInterval(function() {
-				$pole.eq(index).css({
-					'border-bottom': r + fall + 'px solid white',
 
-				})
-				$board.eq(index).css({
-					'bottom': h - 0 + fall + plate_L,
-					'transform-origin': 'center ' + (plate_H + fall + r + plate_L) + 'px'
-				})
-				$plate.eq(index).show();
-				fall_v += 10;
-				fall -= fall_v;
-				// console.log("fall"+fall)
-				if (fall <= 0) {
-					clearInterval(t2);
-					if (flag && index < 4) {
+	function display(index) {
 
-						setTimeout(function() {
-							display(index + 1);
-							flag = false;
-						}, 30);
+		let flag = true;
+		let fall = fall_length;
+		let fall_v = 0; // 记录下落的速度
+		let t2 = setInterval(function() {
+			$pole.eq(index).css({
+				'border-bottom': r + fall + 'px solid white',
 
-					}
-					$pole.css({
-						'border-bottom': r + 'px solid white'
-					})
-					$board.css({
-						'bottom': h - 0 + plate_L,
-						'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
-					})
+			})
+			$board.eq(index).css({
+				'bottom': h - 0 + fall + plate_L,
+				'transform-origin': 'center ' + (plate_H + fall + r + plate_L) + 'px'
+			})
+			$plate.eq(index).show();
+			fall_v += 10;
+			fall -= fall_v;
+			// console.log("fall"+fall)
+			if (fall <= 0) {
+				clearInterval(t2);
+				if (flag && index < 4) {
+
+					setTimeout(function() {
+						display(index + 1);
+						flag = false;
+					}, 30);
+
 				}
-			}, 20)
+				$pole.css({
+					'border-bottom': r + 'px solid white'
+				})
+				$board.css({
+					'bottom': h - 0 + plate_L,
+					'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
+				})
+			}
+		}, 20)
 
-		}
+	}
 
-displayplate();
+	displayplate();
 	display(0);
-	
+
 
 	//该函数用来控制初始偏转的角度
 	function initial_degree() {
@@ -387,10 +304,24 @@ displayplate();
 	//应该获取这个牌子现在的角度，以及它和0度的差值
 	//现在用另外一个len2和u2一直保存最左边的牌子的位置
 	$(".plate").click(function() {
-		let len;
-		let len2;
-		let u2;
 		let index = $plate.index(this);
+		// countdegree(index);
+		click_degree(index);
+		//旋转牌子以后打开窗口
+		let mathlen = Math.abs(len);
+		let timelen = mathlen / Degree;
+		setTimeout(function() {
+			displayevent(index);
+		}, 200 * timelen + 100);
+
+	})
+
+
+	var len;
+	var len2;
+	//先算出偏转角度，获得角度以后调用函数rotate旋转牌子
+	function click_degree(index) {
+		let u2;
 		let u = $board.eq(index).css('transform');
 		if (u != "none") {
 			let values = u.split('(')[1].split(')')[0].split(',');
@@ -429,12 +360,9 @@ displayplate();
 		} else {
 			len2 = u2;
 		}
-		// console.log("len" + len)
-		// console.log("index" + index)
-		click_degree(index, len, len2);
-	})
 
-	function click_degree(index, len, len2) {
+
+		//
 		$plate = $(".plate");
 		let location = [];
 		location[0] = len2;
@@ -442,9 +370,6 @@ displayplate();
 		location[2] = len2 + Degree * 2;
 		location[3] = len2 + Degree * 3;
 		location[4] = len2 + Degree * 4;
-		// console.log("location=" + location)
-
-
 
 		rorate_plate(location[0], 0, -len);
 		rorate_plate(location[1], 1, -len);
@@ -453,19 +378,160 @@ displayplate();
 		rorate_plate(location[4], 4, -len);
 
 
-
 	}
+	
+
 
 	//展示爱特大事件
-	function displayevent() {
+	function displayevent(index) {
+
+		$eventboard.eq(index).css({
+			'display': 'block',
+			'z-index': '200',
+
+		})
+		$(".year").eq(index).css({
+			'z-index': '200'
+		})
+		$(".close").eq(index).css({
+			'z-index': '200'
+		})
+		$eventboard.eq(index).animate({
+			'width': '55.5%',
+			'height': '62.3%',
+			'margin-left': '-27.75%',
+			'margin-bottom': -0.3118 * H,
+			'bottom': '50%'
+		}, 600, function() {
+			$eventtext.eq(index).css({
+				'height': 0.74 * parseInt($eventboard.eq(index).css('height')),
+				'margin-top': -0.5* 0.74 * parseInt($eventboard.eq(index).css('height')),
+				// 'margin-bottom': -0.3118*H,
+			})
+			$eventtext.eq(index).show();
+			$eventtext.eq(index).animate({
+				'opacity': '1'
+			})
+			$(".year").eq(index).show();
+			$(".year").eq(index).animate({
+				'opacity': '1'
+			})
+			$(".close").eq(index).show();
+			$(".close").eq(index).animate({
+				'opacity': '1'
+			})
+		});
+
 
 	}
 
+
+	//点击×关闭艾特大事记
+	$(".yearevent .close").click(function() {
+		var index = $(".eventwrap .close").index(this);
+		// alert(index)
+		closeevent(index);
+	})
+	//关闭爱特大事件的函数
+	function closeevent(index) {
+		$(".year").eq(index).animate({
+			'opacity': '0'
+		}, function() {
+			$(".year").eq(index).hide();
+		})
+		$(".close").eq(index).animate({
+			'opacity': '0'
+		}, function() {
+			$(".close").eq(index).hide();
+		})
+		$eventtext.eq(index).animate({
+			'opacity': '0'
+		}, function() {
+			$eventboard.eq(index).animate({
+				'width': W * 0.061 + 'px',
+				'height': 0.0375 * W + 'px',
+				'bottom': h - 0 + plate_L,
+				'margin-left': -0.0305 * W + 'px',
+				'line-height': 0.0375 * W + 'px',
+				'margin-bottom': '0px',
+				'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
+			})
+			$eventboard.eq(index).animate({
+				'z-index': '-200',
+
+
+			}, 20, function() {
+				$eventboard.eq(index).css({
+					'display': 'none'
+				})
+				//把牌子收回初始位置
+
+				click_degree(2);
+
+			})
+			$(".year").eq(index).css({
+				'z-index': '-200'
+			})
+			$(".close").eq(index).css({
+				'z-index': '-200'
+			})
+			// $eventtext.eq(index).hide();
+
+		})
+
+
+
+	}
+
+	function ballmove() {
+
+		$baller = $(".ball");
+		var ball = new Object();
+
+		ball.y = parseInt($baller.css('top'));
+		let ballfalllen = 100;
+		ball.v = 0;
+		ball.a = 0.1;
+		ball.degree = 0;
+		ball.degreea = 60;
+		//这是小球的下落
+		let t1 = setInterval(function() {
+			if (ball.y - ball.v > 0.7 * H)
+
+			{
+				clearInterval(t1);
+
+
+				let t2 = setInterval(function() {
+					if (ball.v < 0) {
+						ball.v = 0;
+						clearInterval(t2);
+
+						ballmove();
+					}
+					ball.degreea -= 10;
+					ball.degree += ball.degreea;
+					$baller.css({
+						'transform': 'rotate(' + ball.degree + 'deg)'
+					})
+					ball.v -= ball.a;
+					ball.y -= ball.v;
+					$baller.css({
+						'top': ball.y
+					})
+				}, 20)
+			}
+			ball.v += ball.a;
+			ball.y += ball.v;
+			$baller.css({
+				'top': ball.y
+			})
+		}, 20)
+	}
+	ballmove();
 
 }
 
-// $(".next-page-arrow-left").animate({opacity:0},1000,function(){
-//             $(this).animate({opacity:1},1000);
-//         });
+
 
 //关于那个小球要拟人化的

@@ -32,6 +32,8 @@ textarea{
 .container{
 	overflow: hidden;
 	position: relative;
+	background-color: #f7f7f7;
+	
 }
 /*.event{
 	position: absolute;
@@ -66,6 +68,9 @@ textarea{
 .background img{
 	width: 1285px;
 	height: auto;
+
+	z-index: 3;
+	position: relative;
 }
 
 
@@ -79,63 +84,10 @@ textarea{
 	margin-left: -1px;
 	background-color: #458bac;
 	transform-origin: bottom right;
-	z-index: -10;
+	z-index: 10;
 
 
 }
-/*.plate {
-	width: 2px;
-	height: 200px;
-	position: absolute;
-	left: 50%;
-	bottom: 0px;
-	margin-top: 500px;
-	margin-left: -1px;
-	background-color: #458bac;
-	transform-origin: bottom right -1px;
-	z-index: -10;	
-
-}*/
-/*.plates{
-	overflow: hidden;
-}*/
-/*.pole{
-	width: 4px;
-	height: 500px;
-	position: absolute;
-	left: 50%;
-	bottom: 0px;
-	margin-top: 500px;
-	/*background-color: #458bac;*/
-	/*background-color: red;
-	transform-origin: bottom right -1px;
-
-}*/
-/*.plate:nth-child(1)
-{
-	transform: rotate(-30deg);
-	
-}
-.plate:nth-child(2)
-{
-	transform: rotate(-15deg);
-	
-}
-.plate:nth-child(3)
-{
-	transform: rotate(0deg);
-	
-}
-.plate:nth-child(4)
-{
-	transform: rotate(15deg);
-	
-}
-.plate:nth-child(5)
-{
-	transform: rotate(30deg);
-	
-}*/
 
 .plate .board{
 	width: 117px;
@@ -154,7 +106,9 @@ textarea{
 
 }
 
-
+.plate .board:hover{
+	cursor: pointer;
+}
 
 .ball{
 	position: absolute;
@@ -171,41 +125,53 @@ textarea{
 	display: none;
 }
 .index_topic{
-	width: 1067px;
-	height: 625px;
-	background-color: rgba(255, 255, 255, 0.85);
+	width: 100%;
+	height: 425px;
+	/*background-color: rgba(255, 255, 255, 0.85);
 	border-radius: 10px;
-	border: solid 2px rgba(69, 139, 172, 0.85);
-	opacity: 0.85;
+	border: solid 2px rgba(69, 139, 172, 0.85);*/
+	/*opacity: 0.85;*/
 	z-index: 100;
 	position: absolute;
 	left: 50%;
-	margin-left: -533.5px;
+	margin-left: -50%;
 	top: 50%;
 	margin-top: -312.5px;
 	overflow: auto;
-	padding: 85px 0px 85px 0px;
+	/*padding: 85px 0px 85px 0px;*/
+	
+	z-index: -200;
+	/*overflow: hidden;*/
+	display: none;
+	opacity: 0;
 }
 
 .event {
-	width: 660px;
+	width: 89%;
 	/*width: 100%;*/
-	min-height: 44px;
-	background-color: #ffffff;
+	/*min-height: 44px;*/
+	
 	border-radius: 10px;
 	border: solid 2px #458bac;
 	padding: 23px 30px 23px 30px;
 	margin-bottom: 29px;
 	
 }
-.year2016{
+.yearevent{
 	width: 1067px;
 	height: 625px;
 	position: absolute;
 	left: 50%;
 	margin-left: -533.5px;
-	top: 50%;
+	/*top: 50%;*/
 	margin-top: -312.5px;
+	z-index: -200;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	/*padding-top: 85px;
+	padding-bottom: 85px;*/
+	display:none;
 }
 .year {
 
@@ -216,11 +182,69 @@ textarea{
 	letter-spacing: 2px;
 	color: #458bac;
 	position: absolute;
-	left: 86px;
-	top: 58px;
+	left: 5.4%;
+	top: 10%;
+	z-index: -200;
+	display: none;
+	opacity: 0;
+	margin-top: -5px;
 }
 .close{
+	width: 15px;
+	height: 15px;
 	position: absolute;
-	top: 19px;
-	right: 19px;
+	top: 23px;
+	right: 26px;
+	z-index: -200;
+	margin-top: -13px;
+	display: none;
+	opacity: 0;
+
+}
+.close:hover{
+	cursor: pointer;
+}
+.event_wrap{
+
+}
+
+
+
+@media screen and (max-width: 1557px){
+   .event{
+   	width: 86%;
+   }
+   /*.mCustomScrollBox{
+   	margin-left: 21px;
+   }*/
+   
+}
+@media screen and (max-width: 1220px){
+   .event{
+   	width: 81%;
+   	margin-left: 10px;
+   }
+   /*.mCustomScrollBox{
+   	margin-left: 21px;
+   }*/
+   
+}
+@media screen and (max-width: 1095px){
+   .event{
+   	width: 73%;
+   	margin-left: 29px;
+   }
+   /*.mCustomScrollBox{
+   	margin-left: 21px;
+   }*/
+   
+}
+@media screen and (max-width: 980px){
+   .event{
+   	width: 79%;
+   	margin-left: 10px;
+   }
+   .year{
+   	font-size: 22px;
+   }
 }

@@ -1,3 +1,39 @@
+
+
+var userAgent = navigator.userAgent.toLowerCase();
+// Figure out what browser is being used
+jQuery.browser = {
+	version: (userAgent.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [])[1],
+	safari: /webkit/.test(userAgent),
+	opera: /opera/.test(userAgent),
+	msie: /msie/.test(userAgent) && !/opera/.test(userAgent),
+	mozilla: /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent)
+}; //通过正则去判断当前使用的哪种内核的浏览器
+var H, W;
+if ($.browser.version != "7.0") //判断是不是IE7 ，IE7下不支持“$(window).width()”
+{
+	H = $(window).height(); //获得窗口宽度
+	W = $(window).width(); //获得窗口高度
+
+	$(window).resize(function() { //浏览器缩放重新获得窗口宽高
+		H = $(window).height();
+		W = $(window).width();
+
+	});
+
+	$(".container").height(H);
+	$(".container").width(W);
+
+
+	$(window).resize(function() { //浏览器缩放重新获得窗口宽高
+		$(".container").height(H);
+		$(".container").width(W);
+
+	})
+} else {
+
+}
+
 var flag = [false, false, false, false, false, false];
 
 let Isname = false,
@@ -111,16 +147,22 @@ $(".phonenumber").on({
 		})
 	}
 })
-$(".self_introduction").on({
+$(".introduction").on({
+
 	focus: function() {
-		if (!Isintro && $(".self_introduction").val() == "") {
+		if (!Isintro && $(".introduction").val() == "") {
 			
 			$(".self_introduction").css({
 				"color": "#2a74a3"
 			})
 			
-			Isintro = true;
+			// Isintro = true;
 		}
+	},
+	blur:function(){
+		if($(".introduction").val() != ""){
+		}
+			Isintro = true;
 	}
 
 })
@@ -139,13 +181,13 @@ $(".intention ul li").click(function() {
 })
 
 $(".form_submit").click(function() {
-	if (Isname == true && Isprofession == true && Isqq == true && Isintention == true && Isphone == true && Isintro == true && $("self_introduction").val().length <= 200 && $(".self_introduction").val().length > 0) {
+	if (Isname == true && Isprofession == true && Isqq == true && Isintention == true && Isphone == true && Isintro == true && $(".introduction").val().length <= 200 && $(".introduction").val().length > 0) {
 		let str = $(".selected").text();
 		$(".intention_choose").html(str);
 
 
 	} else {
-		if ($(".self_introduction").val().length > 200) {
+		if ($(".introduction").val().length > 200) {
 			alert("输入超限");
 		} else {
 			alert("信息填写不完全");
@@ -167,3 +209,153 @@ $("form").submit(function() {
 		return false;
 	}
 });
+
+//点击查看进程
+$(".apform .check").click(function(){
+	$(".apform").hide();
+	$(".verify").show();
+})
+
+let ISchecknum = false;
+$(".verify input").on({
+	focus: function() {
+		if (!Ischecknum) {
+			$(".verify input").val("");
+			
+		}
+	},
+	blur: function() {
+		// reg = /^[1-9][0-9]{4,10}$/;
+		// if (!reg.test($(".qq").val())) {
+		// 	$(".qq").val("qq");
+		// 	$(".qq").css({
+		// 		"color": "#e81a33"
+		// 	})
+		// 	Ischecknum = false;
+		// } else {
+		// 	Ischecknum = true;
+		// }
+		
+	}
+})
+//promise
+function promisesetajax(obj) {
+	return new Promise((resolve, reject) => {
+		var request = new XMLHttpRequest();
+		request.open(obj.method, obj.url, obj.async);
+		if (obj.method == 'GET') {
+			request.send();
+		} else if (obj.method == 'POST') {
+			request.send(obj.data);
+		}
+
+		request.onreadystatechange = function() {
+			if (request.readyState === 4) {
+				if (request.status === 200) {
+					var dat = JSON.parse(request.responseText);
+					resolve(dat);
+
+				} else {
+					reject(new Error(request.status))
+				}
+			}
+
+		}
+
+	})
+}
+//输入编号点击查询
+
+//要判断是否填写了编号,要返回错误信息
+function checkprocess(){
+var obj = {
+		url: 'http://118.25.179.209/api/status/get?UserCode='+$(".verify input").val(),
+		method: 'GET',
+		data: {
+
+		},
+		dataType: 'Default: Intelligent Guess',
+		async: true
+
+	}
+		promisesetajax(obj).then(function(data) {
+			let str = "";
+			if(data.success){
+
+			if (data.status == '[]') {
+
+			} else {
+				// for (let i = 0, m = data.status.length; i < m; i++) {
+					str +=`
+							<div class="event">
+								<span>2018年9月10日</span>
+								<span> 网上报名</span>
+								<span>成功</span>
+							</div>
+					`	
+
+
+
+					str +=`<div class="events">
+							<div class="event">
+							${data.status[2].statusHappenTime}
+							${data.status[2].statusName}</div>
+							<div class="event"></div>
+							<div class="event"></div>
+						</div>`
+
+					str += `<div class="comments clearfix">
+	         			 	<div class="head"><img src="${data.comment[i].head}" alt="" /></div>
+	          				<div class="right clearfix">
+				            <div class="clearfix" style="margin-bottom: -5px;"> 
+				              	<div class="id"></div>
+				             	 <div class="time">${data.comment[i].createTime}</div>
+				            </div>
+				            <p>${data.comment[i].content}</p>
+				          	</div>
+			        	</div>
+        `
+				}
+			// }
+
+			}else{
+				alert("查询失败!" );
+			}
+
+			$("#mCSB_1_container").append(str);
+
+
+
+		},
+		function(error) {
+			alert("发生错误：" + error);
+		})
+
+
+
+}
+
+
+
+
+$(".verify .check").click(function(){
+
+	$(".verify").hide();
+	$(".processform").show();
+})
+
+
+//输入编号点击返回
+$(".verify .back").click(function(){
+	$('.verify').hide();
+	$(".apform").show();
+})
+
+
+//在报名状态下点击返回，然后回到单号页面
+$(".processform .return").click(function(){
+
+	$(".processform").hide();
+	$(".verify").show();
+})
+
