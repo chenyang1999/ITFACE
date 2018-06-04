@@ -43,8 +43,8 @@ button{
 	width: 11%;
 	height: 8.8%;
 	position: absolute;
-	top: 12.9%;
-	left: 30.05%;
+	top: 14.9%;
+	left: 37.05%;
 }
 .ball .front_end img:nth-child(1)
 {
@@ -228,7 +228,7 @@ h1{
 	opacity: 0;
 }
 .baller:hover{
-	cursor: pointer;;
+	cursor: pointer;
 }
 
 /*.ui,.app,.program,.front_end{
@@ -237,7 +237,7 @@ h1{
 
 .depart_intro .front_end{
 
-	width: 650px;
+	width: 33.85%;
 	height: 350px;
 	background-color: rgba(255, 255, 255, 0.85);
 	border-radius: 10px;
@@ -245,18 +245,120 @@ h1{
 	opacity: 0.85;
 	position: absolute;
 	left: 50%;
-	margin-left: -300px;
+	margin-left: -15.625%;
 	top: 50%;
 	margin-top: -170px;
+	z-index: 500;
 }
-.depart_intro .front_end h3{
-	width: 102px;
-	height: 24px;
-	font-family: MicrosoftYaHei;
+
+
+
+.depart_intro .front_end .close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 1.84%;
+	height: 1.84%;
+}
+.depart_intro .front_end .close img{
+	width: 100%;
+	height: auto;
+}
+.close :hover{
+	cursor: pointer;
+}
+
+.depart_intro .ui{
+
+	width: 33.85%;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 40%;
+	margin-left: -15.625%;
+	top: 50%;
+	margin-top: -170px;
+	z-index: 500;
+}
+
+
+.depart_intro .ui .close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 1.84%;
+	height: 1.84%;
+}
+
+.depart_intro .app{
+
+	width: 33.85%;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 54%;
+	z-index: 500;
+	/*margin-left: -15.625%;*/
+	/*top: 50%;*/
+	/*margin-top: -170px;*/
+}
+.depart_intro .app h3,.depart_intro .ui h3,.depart_intro .program h3,.depart_intro .front_end h3{
+	
 	font-size: 24px;
 	font-weight: normal;
 	font-stretch: normal;
 	letter-spacing: 2px;
 	text-align: center;
+	margin:0px auto;
+	margin-top: 65px;
+	margin-bottom: 50px;
+	color: #458bac;
 
+}
+.depart_intro .app p,.depart_intro .ui p,.depart_intro .program p,.depart_intro .front_end p{
+	width: 80%;
+	margin:0px auto;
+	font-size: 18px;
+}
+
+.depart_intro .app .close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 1.84%;
+	height: 1.84%;
+}
+.depart_intro .app .close img,.depart_intro .ui .close img,.depart_intro .app .program img,.depart_intro .app .front_end img{
+	width: 100%;
+	height: auto;
+}
+.depart_intro .program{
+
+	width: 33.85%;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 40%;
+	/*margin-left: -15.625%;*/
+	top: 50%;
+	margin-top: -170px;
+	z-index: 500;
+}
+
+
+.depart_intro .program .close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 1.84%;
+	height: 1.84%;
 }

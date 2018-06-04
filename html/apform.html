@@ -19,41 +19,43 @@
 				<button class="back"></button>
 
 			</div>
-			<form class="apform" action="" method="post" id="apform" >
+			<form class="apform" action="" method="post" id="apform" style="display: none;">
 					<div class="formbody">
 						<div class="basic_info">
-							<div>姓名</div>
+							<div class="info_title">姓名</div>
 							<input type="text" class="name">
 							<div style="clear: both;"></div>
 						</div>
 						<div class="basic_info clearfix">
-							<div>专业</div>
+							<div class="info_title">专业</div>
 							<input type="text" class="profession">
 						</div>
 						<div class="basic_info clearfix">
-							<div>QQ</div>
+							<div class="info_title">QQ</div>
 							<input type="text" class="qq">
 						</div>
 						<div class="basic_info clearfix">
-							<div>手机</div>
+							<div class="info_title">手机</div>
 							<input type="text" class="phonenumber">
 						</div>
+						<div style="clear: both;"></div>
 						<div class="intention clearfix">
 							<h2>请选择意向部门</h2>
-							<ul>
+							<ul class="clearfix">
 								<li>前端部门</li>
 								<li>UI部门</li>
 								<li>程序部门</li>
 								<li>安卓部门</li>
 							</ul>
 						</div>
+						<div style="clear: both;"></div>
 						<div class="intention_choose"></div>
 						<div class="self_introduction">
-							<div>个人简介</div>
+							<div class="title">个人简介</div>
 							<textarea name="introduction" id="" cols="" rows="" class="introduction"></textarea>
 							<div class="tip">（不要超过200字）</div>
 						</div> 
-						<div class="buttonwrap">
+						<div class="buttonwrap clearfix2">
 							
 							<button class="form_submit" type="submit"></button>
 							<button class="check"></button>
@@ -62,7 +64,7 @@
 					</div>
 		
 			</form>
-			<div class="processform" style="display: none;">
+			<div class="processform" >
 				<div class="info clearfix name">
 					<div class="title">姓名:</div>
 					<div class="content">浦则元</div>
