@@ -163,6 +163,9 @@ button{
 	/*margin-right: 50px;*/
 	margin-right: 15.625%;
 }
+.intention ul li:hover{
+	cursor: pointer;
+}
 .self_introduction{
 	/*width: 452px;*/
 	width: 100%;
@@ -249,8 +252,11 @@ background-size: cover;
 	/*right: 85px;*/
 	right: 15.7%;
 	background-position: center;
-}
 
+}
+.form_submit,#apform .check:hover{
+	cursor: pointer;
+}
 
 .intention_choose{
 	display: none;
@@ -300,6 +306,9 @@ background-size: cover;
 	border-radius: 25px;
 	background-image: url(../images/check2.png);
 	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
 	font-size: 24px;
 	font-weight: normal;
 	font-stretch: normal;
@@ -311,10 +320,13 @@ background-size: cover;
 	margin-left: 34.85%;
 	margin-top: 311px;
 }
-
+.verify .check,.verify .back:hover{
+	cursor: pointer;
+}
 .verify .back{
 
 	background-image: url(../images/back.png);
+	background-position: center;
 	margin-top: 31px;
 
 }
@@ -411,7 +423,7 @@ background-size: cover;
 	 
 }
 .processform .return{
-	width: 30.3%;
+	width: 36.9%;
 /*	background-blend-mode: normal, 
 		normal;
 	box-shadow: 0px 4px 4px 0px 
@@ -420,6 +432,7 @@ background-size: cover;
 	background-image: url(../images/back.png);
 	background-repeat: no-repeat;
 	background-position: center;
+	background-size: cover;
 	border: none;
 	/*position: absolute;*/
 	/*left: 50%;*/
@@ -429,7 +442,9 @@ background-size: cover;
 
 
 }
-
+.processform .return:hover{
+	cursor:pointer;
+}
 @media screen and (max-width: 1400px)
 {
 	.apform{
@@ -472,6 +487,13 @@ background-size: cover;
 	}
 	.state{
 		font-size: 9px;
+	}
+	.verify h2{
+		font-size: 13px;
+	}
+	.verify input{
+		border:solid 1px #458bac;
+		font-size: 12px;
 	}
 
 

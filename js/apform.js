@@ -32,9 +32,18 @@ $(document).ready(function() {
 			'margin-bottom': 0.021 * 0.802 * H,
 		})
 		$(".basic_info").height(0.075 * 0.802 * H);
-		$(".info_title").css({
-			'margin-top': 0.0346 * 0.802 * H
-		})
+		if (H < 840) {
+			console.log("888")
+			$(".info_title").css({
+				'margin-top': 0.0306 * 0.802 * H
+			})
+
+		} else {
+			$(".info_title").css({
+				'margin-top': 0.0346 * 0.802 * H
+			})
+		}
+
 		$(".basic_info input").css({
 			'height': 0.059 * 0.802 * H,
 			'margin-top': 0.0115 * 0.802 * H
@@ -144,9 +153,24 @@ $(document).ready(function() {
 				'height': 0.059 * 0.802 * H,
 				'margin-top': 0.0115 * 0.802 * H
 			})
-			$(".info_title").css({
-				'margin-top': 0.0346 * 0.802 * H
-			})
+			if (H < 610) {
+				console.log("888")
+				$(".info_title").css({
+					'margin-top': 0.0156 * 0.802 * H
+				})
+
+			} else if (H < 840) {
+				// alert("999")
+				console.log("888")
+				$(".info_title").css({
+					'margin-top': 0.0206 * 0.802 * H
+				})
+
+			} else {
+				$(".info_title").css({
+					'margin-top': 0.0346 * 0.802 * H
+				})
+			}
 			$(".intention ul li").css({
 				'height': 0.0599 * 0.802 * H,
 				'line-height': 0.0599 * 0.802 * H + 'px'
@@ -498,7 +522,7 @@ $(document).ready(function() {
 						// for (let i = 0, m = data.status.length; i < m; i++) {
 						str += `
 							<div class="event">
-								<span>2018年9月10日</span>
+								<span>${data.status[i].statusHappenTime}</span>
 								<span> 网上报名</span>
 								<span>成功</span>
 							</div>

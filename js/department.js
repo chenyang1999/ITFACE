@@ -205,9 +205,9 @@ if ($.browser.version != "7.0") //判断是不是IE7 ，IE7下不支持“$(wind
 } else {
 
 }
-
+let t1, t2, t3, t4, t5, t6, t7;
 //ui小球运动函数
-function balloval(ballname, ox, oy, shorto, longo) {
+function balloval3(ballname, ox, oy, shorto, longo) {
 	$ball = $(ballname);
 	var y = parseInt($ball.css("top"));
 	let originx = ox * W;
@@ -219,15 +219,15 @@ function balloval(ballname, ox, oy, shorto, longo) {
 	let all = long2 * short2;
 	let b = y;
 	// console.log("orginx"+ox*W)
-	let t1 = setInterval(function() {
+	t5 = setInterval(function() {
 		// console.log($ball.css('left'));
 		if (parseInt($ball.css('left')) < 0.49 * W) {
-			clearInterval(t1);
+			clearInterval(t5);
 
-			let t2 = setInterval(function() {
+			t6 = setInterval(function() {
 				if (parseInt($ball.css('top')) > 0.58 * H) {
-					clearInterval(t2);
-					balloval(ballname, ox, oy, shorto, longo);
+					clearInterval(t6);
+					balloval3(ballname, ox, oy, shorto, longo);
 				}
 				b += 1;
 				x = Math.sqrt((all - long2 * (b - originy) * (b - originy)) / short2);
@@ -251,11 +251,11 @@ function balloval(ballname, ox, oy, shorto, longo) {
 	}, 20)
 }
 
-balloval(".ball .ui", 0.30, 0.65, 0.27 * W, 0.27 * W);
+balloval3(".ball .ui", 0.30, 0.65, 0.27 * W, 0.27 * W);
 
 
 //前端小球运动函数
-function balloval4(ox, oy, shorto, longo) {
+function balloval1(ox, oy, shorto, longo) {
 	// $ball = $(ballname);.
 	var y = parseInt($(".front_end").css("top"));
 	let originx = ox * W;
@@ -267,15 +267,15 @@ function balloval4(ox, oy, shorto, longo) {
 	let all = long2 * short2;
 	let b = y;
 	// console.log("orginx"+ox*W)
-	let t = setInterval(function() {
+	t1 = setInterval(function() {
 		// console.log($ball.css('left'));
 		if (parseInt($(".ball .front_end").css('top')) > 0.53 * H) {
-			clearInterval(t);
+			clearInterval(t1);
 
-			let t2 = setInterval(function() {
+			t2 = setInterval(function() {
 				if (parseInt($(".ball .front_end").css('left')) < 0.36 * W) {
 					clearInterval(t2);
-					balloval4(ox, oy, shorto, longo);
+					balloval1(ox, oy, shorto, longo);
 				}
 				b -= 1;
 				x = Math.sqrt((all - long2 * (b - originy) * (b - originy)) / short2);
@@ -300,9 +300,9 @@ function balloval4(ox, oy, shorto, longo) {
 	}, 20)
 }
 
-balloval4(0.25, 0.75, 0.24 * W, 0.19 * W);
+balloval1(0.25, 0.75, 0.24 * W, 0.19 * W);
 //程序部门的小球
-function balloval2(ox, oy, shorto, longo) {
+function balloval4(ox, oy, shorto, longo) {
 	// $ball = $(ballname);
 	let y = parseInt($(".ball .program").css("top"));
 	let originx = ox * W;
@@ -314,20 +314,20 @@ function balloval2(ox, oy, shorto, longo) {
 	let all = long2 * short2;
 	let b = y;
 	// console.log("orginx"+ox*W)
-	let t = setInterval(function() {
+	t7 = setInterval(function() {
 		// console.log($(".program").css('left'));
 		if (Ismovein == true) {
-			clearInterval(t);
+			clearInterval(t7);
 		} else if (parseInt($(".ball .program").css('left')) < 0.66 * W) {
-			clearInterval(t);
+			clearInterval(t7);
 
-			let t2 = setInterval(function() {
+			t8 = setInterval(function() {
 				if (Ismovein == true) {
-					clearInterval(t2);
+					clearInterval(t8);
 				}
 				if (parseInt($(".program").css('top')) > 0.55 * H) {
-					clearInterval(t2);
-					balloval2(ox, oy, shorto, longo);
+					clearInterval(t8);
+					balloval4(ox, oy, shorto, longo);
 				}
 				b += 1;
 				x = Math.sqrt((all - long2 * (b - originy) * (b - originy)) / short2);
@@ -350,10 +350,11 @@ function balloval2(ox, oy, shorto, longo) {
 		// console.log(x+short);
 	}, 20)
 }
-balloval2(0.30, 0.65, 0.42 * W, 0.42 * W);
+balloval4(0.30, 0.65, 0.42 * W, 0.42 * W);
 
 //安卓部门的小球
-function balloval3(ox, oy, shorto, longo) {
+
+function balloval2(ox, oy, shorto, longo) {
 
 	var y = parseInt($(".ball .app").css("top"));
 	let originx = ox * W;
@@ -364,16 +365,17 @@ function balloval3(ox, oy, shorto, longo) {
 	let long2 = long * long;
 	let all = long2 * short2;
 	let b = y;
+	// let move = 0;
 	// console.log("orginx"+ox*W)
-	let t = setInterval(function() {
+	t3 = setInterval(function() {
 		// console.log($(".app").css('left'));
 		if (parseInt($(".ball .app").css('left')) < 0.79 * W) {
-			clearInterval(t);
+			clearInterval(t3);
 
-			let t2 = setInterval(function() {
+			t4 = setInterval(function() {
 				if (parseInt($(".ball .app").css('top')) > 0.55 * H) {
-					clearInterval(t2);
-					balloval3(ox, oy, shorto, longo);
+					clearInterval(t4);
+					balloval2(ox, oy, shorto, longo);
 				}
 				b += 1;
 				x = Math.sqrt((all - long2 * (b - originy) * (b - originy)) / short2);
@@ -398,7 +400,7 @@ function balloval3(ox, oy, shorto, longo) {
 }
 
 
-balloval3(0.50, 0.50, 0.33 * W, 0.34 * W);
+balloval2(0.50, 0.50, 0.33 * W, 0.34 * W);
 
 // initialize();
 function initialize() {
@@ -424,9 +426,55 @@ function initialize() {
 }
 
 
-let Ismovein = false;
-let Isclick = false;
+let Ismovein = [false, false, false, false];
+let Isclick = [false, false, false, false];
+let movedown = [false, false, false, false];
+//balloval1(0.25, 0.75, 0.24 * W, 0.19 * W);
+//balloval2(0.50, 0.50, 0.33 * W, 0.34 * W);
+// balloval3(".ball .ui", 0.30, 0.65, 0.27 * W, 0.27 * W);
+//balloval4(0.30, 0.65, 0.42 * W, 0.42 * W);
 
+
+function startt(index) {
+	if (index == 0) {
+		clearInterval(t1);
+		clearInterval(t2);
+		balloval1(0.25, 0.75, 0.24 * W, 0.19 * W);
+	} else if (index == 1) {
+		clearInterval(t3);
+		clearInterval(t4);
+		balloval2(0.50, 0.50, 0.33 * W, 0.34 * W);
+	} else if (index == 2) {
+		clearInterval(t5);
+		clearInterval(t6);
+		balloval3(".ball .ui", 0.30, 0.65, 0.27 * W, 0.27 * W);
+	} else if (index == 3) {
+		clearInterval(t7);
+		clearInterval(t8);
+		balloval4(0.30, 0.65, 0.42 * W, 0.42 * W);
+	}
+
+}
+
+function cleart(index) {
+	if (index == 0) {
+		clearInterval(t1);
+		clearInterval(t2);
+		
+	} else if (index == 1) {
+		clearInterval(t3);
+		clearInterval(t4);
+		
+	} else if (index == 2) {
+		clearInterval(t5);
+		clearInterval(t6);
+	
+	} else if (index == 3) {
+		clearInterval(t7);
+		clearInterval(t8);
+		
+	}
+}
 //先停止上一次的动画
 //鼠标移到星球上
 $(".baller").mouseenter(function() {
@@ -435,7 +483,9 @@ $(".baller").mouseenter(function() {
 		'opacity': '1'
 	}, 200)
 	$(".black").eq(index).stop().show();
-	Ismovein = true;
+
+	Ismovein[index] = true;
+	cleart(index);
 });
 
 //鼠标离开星球
@@ -445,22 +495,22 @@ $(".baller").mouseleave(function() {
 		'opacity': '0'
 	}, 200)
 	$(".black").eq(index).stop().hide();
-	
-	// if(Isclick == true)
-	// {
-	// 	balloval2(0.30, 0.65, 0.42 * W, 0.42 * W);
-	// }
-	Ismovein = false;
+
+	if (Isclick[index] == false) {
+		startt(index);
+	}
+	Ismovein[index] = false;
 });
 
-$(".baller").click(function(){
+$(".baller").click(function() {
 	console.log("99")
 	let index = $(".baller").index(this);
 	$(".depart_intro .intro").eq(index).show();
 	$(".depart_intro .intro").eq(index).animate({
 		'opacity': '1'
 	}, 200)
-
+	Isclick[index] = true;
+	cleart(index);
 
 })
 //关闭介绍
@@ -471,7 +521,9 @@ $(".depart_intro .close").click(function() {
 	}, 200, function() {
 		$(".depart_intro").eq(index).hide();
 	})
-	balloval2(0.30, 0.65, 0.42 * W, 0.42 * W);
+
+	Isclick[index] = false;
+	startt(index);
 
 });
 
