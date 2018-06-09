@@ -26,6 +26,8 @@ button{
 	margin:0px;
 	font-family: MicrosoftYaHei;
 }
+
+
 .container{
 	background-color: #F7F7F7;
 	width: 100%;
@@ -64,7 +66,8 @@ button{
 }
 
 .index_topic{
-	max-width:1120px; 
+	/*max-width:1120px; */
+	width: 58.3%;
 	height:447px; 
 	/*height: 50%;*/
 	margin: 0px auto;
@@ -74,28 +77,37 @@ button{
 	border: none;
 }
 .comments{
-	width: 1118px;
-	min-height: 127px;
+	/*width: 1118px;*/
+	width: 99.8%;
+	/*min-height: 127px;*/
 	background-color: #ffffff;
 	box-shadow: 0px 2px 6px 0px 
 		rgba(0, 0, 0, 0.15);
 	border-radius: 8px;
-	border: 1px solid #ffffff;
+	/*border: 1px solid #ffffff;*/
 	margin-bottom: 30px;
 }
 .comments .head{
-	width: 56px;
+	/*width: 56px;*/
+	width: 5%;
 	height: 82px;
 	float: left;
-	margin-left: 90px;
-	margin-right: 55px;
+	/*margin-left: 90px;*/
+	margin-right: 4.9%;
+	/*margin-right: 55px;*/
+	margin-left: 8.05%;
 	margin-top: 22px;
 	overflow: hidden;
 	
 }
+.comments .head img{
+	width: 100%;
+	height: auto;
+	}
 .comments .right{
 	margin-top: 16px;
-	width: 824px;
+	/*width: 824px;*/
+	width: 77.7%;
 	min-height: 82px;
 	float: left;
 }
@@ -129,7 +141,8 @@ button{
 }
 
 .make_comment{
-	width: 170px;
+	/*width: 170px;*/
+	width: 100%;
 	height: 51px;
 	background-image: linear-gradient(0deg, 
 		#ffb219 0%, 
@@ -151,9 +164,14 @@ button{
 	letter-spacing: 2px;
 	color: #ffffff;
 
+
+}
+.make_comment:hover{
+	cursor: pointer;
 }
 .make_comment_wrap{
-	width: 170px;
+	width: 8.85%;
+	/*width: 170px;*/
 	height: 51px;
 	margin: 0px auto;
 }
@@ -168,17 +186,31 @@ button{
 	left: 50%;
 	margin-left: -560px;
 	margin-top: -281px;*/
-	/*width: 1120px;*/
-	/*height: 562px;*/
+	
 	width: 170px;
 	height: 51px;
 	z-index: -5;
+
+
+
+
+	/*width: 1120px;*/
+	/*width: 58.3%;
+	height: 562px;
+	z-index: 200;
+	left: 50%;
+	top: 50%;
+	margin-left: -560px;
+	margin-top: -281px;
+*/
+
+	
 	background-color: #ffffff;
 
 	box-shadow: 0px 3px 3px 0px 
 		rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
-	/*z-index: 100;*/
+	/*z-index: 100;
 /*	top:693px;
 	left: 804px;*/
 	/*display: none;*/
@@ -190,43 +222,68 @@ button{
 	top: 15px;
 	right: 15px;
 }
+.close:hover{
+	cursor: pointer;
+}
 .write .header{
-	width: 872px;
+	/*width: 872px;*/
+	width: 77.85%;
 	margin: 0px auto;
-	margin-top: 40px;
+	/*margin-top: 40px;*/
+	/*margin-top: 3.6%;*/
 }
 .select_head{
-	width: 110px;
-	height: 73px;
+	/*width: 110px;*/
+	width: 12.6%;
+	/*height: 73px;*/
+	/*height: 12.9%;*/
 	float: left;
 }
+.write .left_arrow:hover{
+	cursor: pointer;
+}
+.write .right_arrow:hover{
+	cursor: pointer;
+}
 .write .left_arrow{
+	width: 13.6%;
 	float: left;
 	
 	margin-top: 26px;
+	/*margin-top: 4.6%;*/
 }
 .write .left_arrow img{
-	width:15px;
+	/*width:15px;*/
+	width: 100%;
 	height: auto;
 }
 .write .right_arrow{
+	width: 13.6%;
 	float: left;
 	
 	margin-top: 26px;
 }
 .write .right_arrow img{
-	width: 15px;
+	/*width: 15px;*/
+	width: 100%;
 	height: auto;
 }
 .write .head{
 	float: left;
-	width: 45px;
+	/*width: 45px;*/
+	width: 40.9%;
 	height: 73px;
-	margin: 0px 15px 0px 15px;
+	/*margin: 0px 15px 0px 15px;*/
+	margin: 0px 13.6% 0px 13.6%;
 }
+
+
 
 .write .head li{
 	float: left;
+	/*width: 45px;*/
+
+	/*height: 73px;*/
 	display: none;
 }
 .write .head  li:nth-child(1)
@@ -234,7 +291,8 @@ button{
 	display: block;
 }
 .write .head img{
-	width: 45px;
+	/*width: 45px;*/
+	width: 100%;
 	height: 73px;
 }
 .write .head_tip{
@@ -250,7 +308,8 @@ button{
 }
 .write .id{
 	
-	width: 221px;
+	/*width: 221px;*/
+	width: 25.3%;
 	height: 43px;
 	background-color: #ffffff;
 	border-radius: 10px;
@@ -260,13 +319,15 @@ button{
 }
 .write .id input{
 	
-	width: 215px;
+	/*width: 215px;*/
+	width: 97.2%;
 	height: 38px;
 	background-color: #ffffff;
 	border-radius: 10px;
 	border: 1px solid white;
 	font-size: 23px;
-	padding-left: 4px;
+	/*padding-left: 4px;*/
+	padding-left: 1.8%;
 }
 .write .id_tip{
 	float: right;
@@ -279,28 +340,33 @@ button{
 
 }
 .write .text{
-	width: 872px;
-	height: 257px;
+	/*width: 872px;*/
+	width: 77.6%;
+	/*height: 257px;*/
+	height: 45.7%;
 	margin:0px auto;
 	clear: both;
 	margin-top: 17px;
 }
 .write textarea{
-	width: 848px;
-	height: 231px;
+	/*width: 848px;*/
+	width: 97.2%;
+	/*height: 231px;*/
+	height: 89.8%;
 	background-color: #ffffff;
 	border-radius: 8px;
 	border: solid 2px #458bac;
 	padding:10px;
 	font-size: 23px;
 	outline: none;
-	line-height: 20px;
+	line-height: 35px;
 	overflow: hidden;
 
 	
 }
 .write .footer{
-	width: 872px;
+	/*width: 872px;*/
+	width: 77.6%;
 	margin: 0px auto;
 }
 .write .verify_tip{
@@ -313,42 +379,56 @@ button{
 	float: left;
 }
 .write .verify{
-	width: 116px;
-	height: 36px;
+	/*width: 116px;*/
+	width: 13.3%;
+	/*height: 36px;*/
+	height: 7.4%;
 	background-color: #ffffff;
 	border-radius: 8px;
 	border: solid 2px #458bac;
 	float: left;
 	clear: both;
-	margin-top: 12px;
+	/*margin-top: 12px;*/
+	margin-top: 2.1%;
 
 }
 .write .verify input{
-	width: 112px;
-	height: 34px;
+	/*width: 112px;*/
+	width: 95%;
+	/*height: 34px;*/
+	height: 88.8%;
 	background-color: #ffffff;
 	border-radius: 8px;
-	padding-left: 4px;
+	/*padding-left: 4px;*/
+	padding-left: 4.4%;
 	border: none;
 	font-size: 23px;
 
 
 }
 .verify_img{
-	width: 120px;
+	/*width: 120px;*/
+	width: 13.7%;
 	height: 40px;
+	/*height: 7.1%;*/
 	background-color: #7ecef4;
 	float: left;
-	margin-left: 31px;
-	margin-top: 12px;
+	/*margin-left: 31px;*/
+	margin-left: 3.55%;
+	/*margin-top: 12px;*/
+	margin-top: 2.1%;
 }
 .verify_img img{
-	width: 120px;
+	/*width: 120px;*/
+	width: 100%;
 	height: 40px;
+	/*height: 100%;*/
 }
 .write .submit{
-	width: 168px;
+	/*width: 168px;*/
+	width: 19.2%;
 	height: 49px;
+	/*height: 8.7%;*/
 	background-image: linear-gradient(0deg, 
 		#ffb219 0%, 
 		#fdc045 6%, 
@@ -365,12 +445,14 @@ button{
 	font-size: 20px;
 	font-weight: normal;
 	font-stretch: normal;
-	line-height: 49px;
+	/*line-height: 49px;*/
+	line-height: 8.7%;
 	letter-spacing: 2px;
 	color: #ffffff;
 	float: right;
 	outline: none;
-	margin-top: 10px;
+	/*margin-top: 10px;*/
+	margin-top: 1.17%;
 }
 .text_tip{
 	font-size: 16px;
@@ -378,10 +460,20 @@ button{
 	font-stretch: normal;
 	letter-spacing: 1px;
 	color: #757575;
-	margin-top: 16px;
+	/*margin-top: 16px;*/
+	margin-top: 2.8%;
 	float: right;
 }
-@media screen and (max-width: 1550px)
+.submit:hover{
+	cursor: pointer;
+}
+.out_tip{
+	width: auto;
+	/*margin: 0px auto;*/
+	text-align: center;
+}
+
+/*@media screen and (max-width: 1550px)
 {
 	.comments{
 		width: 718px;
@@ -401,9 +493,7 @@ button{
 	.mCSB_inside > .mCSB_container{
 		margin-right: 15px;
 	}
-	.index_topic{
-		width: 750px;
-	}
+
 	.header h1{
 		margin-top: 80px;
 	}
@@ -421,11 +511,55 @@ button{
 		letter-spacing: 1px;
 	}
 
-}
-@media screen and (max-width: 1250px){
-	.index_topic,.write{
-		width: 956px;
+}*/
+@media screen and (max-width: 1400px){
+	.write .id input{
+		font-size: 14px;
 	}
+	.write .verify{
+		font-size: 14px;
+	}
+	.write .head_tip{
+		font-size: 13px;
+	}
+	.write .id_tip{
+		font-size: 13px;
+	}
+	.write .verify_tip{
+		font-size: 13px;
+	}
+	.text_tip{
+		font-size: 13px;
+	}
+	.write .submit{
+		font-size: 16px;
+	}
+	.write textarea{
+		font-size: 16px;
+		line-height: 18px;
+	}
+	.comments .id{
+	font-size:16px;
+	}
+	.comments .time{
+		font-size: 16px;
+	}
+	.comments p{
+		font-size: 12px;
+		line-height: 22px;
+	}
+	.make_comment{
+		font-size: 16px;
+	}
+	.header h1{
+		font-size: 23px;
+	}
+	.write .verify input{
+		font-size: 13px;
+	}
+}
+/*@media screen and (max-width: 1250px){
+
 	.comments{
 		width: 933px;
 	}
@@ -439,4 +573,66 @@ button{
 	.line{
 		margin-top: 22px;
 	}
+}*/
+
+@media screen and (max-width: 1100px){
+	.write .verify input{
+		font-size: 11px;
+	}
+	.write .id input{
+		font-size: 11px;
+	}
+	.write textarea{
+		font-size: 13px;
+		padding: 7px;
+	}
+	.write .verify{
+		font-size: 11px;
+	}
+	.write .head_tip{
+		font-size: 11px;
+	}
+	.write .id_tip{
+		font-size: 11px;
+	}
+	.write .verify_tip{
+		font-size: 11px;
+	}
+	.text_tip{
+		font-size: 11px;
+	}
+	.write .submit{
+		font-size: 12px;
+	}
+	.write textarea{
+		font-size: 14px;
+	}
+	.comments .id{
+	font-size:14px;
+	}
+	.comments .time{
+		font-size: 14px;
+	}
+	.comments p{
+		font-size: 10px;
+		line-height: 22px;
+	}
+	.make_comment{
+		font-size: 12px;
+	}
+	.header h1{
+		font-size: 21px;
+	}
+
+}
+
+
+
+@media screen and (max-width: 1000px){
+	.write textarea{
+		font-size: 12px;
+		line-height: 15px;
+	}
+	
+
 }

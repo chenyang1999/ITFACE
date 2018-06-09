@@ -19,7 +19,7 @@
 				<button class="back"></button>
 
 			</div>
-			<form class="apform" action="" method="post" id="apform" style="display: none;">
+			<form class="apform" action="" method="post" id="apform" name="apform">
 					<div class="formbody">
 						<div class="basic_info">
 							<div class="info_title">姓名</div>
@@ -37,6 +37,10 @@
 						<div class="basic_info clearfix">
 							<div class="info_title">手机</div>
 							<input type="text" class="phonenumber">
+						</div>
+						<div class="basic_info clearfix">
+							<div class="info_title">邮箱</div>
+							<input type="text" class="email">
 						</div>
 						<div style="clear: both;"></div>
 						<div class="intention clearfix">
@@ -58,13 +62,13 @@
 						<div class="buttonwrap clearfix2">
 							
 							<button class="form_submit" type="submit"></button>
-							<button class="check"></button>
+							<button class="apform_check" type="button"></button>
 						</div>
 						
 					</div>
 		
 			</form>
-			<div class="processform" >
+			<div class="processform"  style="display: none;">
 				<div class="info clearfix name">
 					<div class="title">姓名:</div>
 					<div class="content">浦则元</div>
@@ -89,7 +93,7 @@
 							<div class="dot"></div>
 						</div>
 						<div class="events">
-							<div class="event">
+							<!-- <div class="event">
 								<span>2018年9月10日</span>
 								<span> 网上报名</span>
 								<span>成功</span>
@@ -103,7 +107,7 @@
 								<span>2018年9月10日</span>
 								<span> 网上报名</span>
 								<span>成功</span>
-							</div>
+							</div> -->
 							
 						</div>
 

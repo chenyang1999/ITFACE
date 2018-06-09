@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
 
 	var userAgent = navigator.userAgent.toLowerCase();
@@ -25,15 +25,16 @@ $(document).ready(function() {
 
 		$(".container").height(H);
 		$(".container").width(W);
-		$("#apform").height(0.802 * H);
-		$(".verify").height(0.802 * H);
-		$(".formbody").height(0.802 * H);
+		$("body").eq(0).height(H)
+		$("#apform").height(0.852 * H);
+		$(".verify").height(0.852 * H);
+		$(".formbody").height(0.852 * H);
 		$(".formheader").css({
 			'margin-bottom': 0.021 * 0.802 * H,
 		})
 		$(".basic_info").height(0.075 * 0.802 * H);
 		if (H < 840) {
-			console.log("888")
+			
 			$(".info_title").css({
 				'margin-top': 0.0306 * 0.802 * H
 			})
@@ -59,14 +60,14 @@ $(document).ready(function() {
 			// 'bottom':0.0322*0.802*H,
 			'height': 0.058 * 0.802 * H
 		})
-		$(".intention").height(0.22 * 0.802 * H);
+		$(".intention").height(0.21 * 0.802 * H);
 		$(".intention h2").css({
 			'margin-top': 0.041 * 0.802 * H,
-			'margin-bottom': 0.034 * 0.802 * H
+			'margin-bottom': 0.030 * 0.802 * H
 		})
 		$(".buttonwrap").css({
 			'height': 0.058 * 0.802 * H,
-			'margin-top': 0.040 * 0.802 * H
+			'margin-top': 0.037 * 0.802 * H
 		})
 		$(".intention ul li").eq(0).css({
 			'margin-bottom': 0.03 * 0.802 * H
@@ -76,15 +77,15 @@ $(document).ready(function() {
 		})
 
 		$(".self_introduction .title").css({
-			'margin-bottom': 0.028 * 0.802 * H
+			'margin-bottom': 0.025 * 0.802 * H
 		})
 		if (W < '1400') {
 			$(".self_introduction").css({
-				'margin-top': 0.039 * 0.802 * H
+				'margin-top': 0.035 * 0.802 * H
 			})
 		} else {
 			$(".self_introduction").css({
-				'margin-top': 0.046 * 0.802 * H
+				'margin-top': 0.041 * 0.802 * H
 			})
 		}
 		$(".verify input").height(0.0807 * 0.802 * H);
@@ -94,11 +95,11 @@ $(document).ready(function() {
 		$(".verify .inputwrap").css({
 			'margin-top': 0.076 * 0.802 * H
 		})
-		$(".verify .check,.verify .back").css({
+		$(".verify .verify_check,.verify .verify_back").css({
 			'height': 0.0588 * 0.802 * H,
 			'margin-top': 0.3587 * 0.802 * H
 		})
-		$(".verify .back").css({
+		$(".verify .verify_back").css({
 			'margin-top': 0.0357 * 0.802 * H
 		})
 		$(".processform .info").css({
@@ -115,22 +116,24 @@ $(document).ready(function() {
 			'height': 0.0138 * 0.802 * H
 		})
 		$(".dot").eq(0).css({
-			'top': 0.0346 * 0.802 * H
+			'bottom': 0.0346 * 0.802 * H
 		})
 		$(".dot").eq(1).css({
 			'bottom': 0.201 * 0.802 * H
 		})
 		$(".dot").eq(2).css({
-			'bottom': 0.0346 * 0.802 * H
-		})
-		$(".event").eq(0).css({
+
 			'top': 0.0346 * 0.802 * H
 		})
+		$(".event").eq(0).css({
+			'bottom': 0.0346 * 0.802 * H
+
+		})
 		$(".event").eq(1).css({
-			'bottom': 0.201 * 0.802 * H
+			'bottom': 0.180 * 0.802 * H
 		})
 		$(".event").eq(2).css({
-			'bottom': 0.0346 * 0.802 * H
+			'top': 0.0346 * 0.802 * H
 		})
 		$(".processform .return").css({
 			// 'bottom': 0.047 * 0.802 * H,
@@ -142,9 +145,10 @@ $(document).ready(function() {
 		$(window).resize(function() { //浏览器缩放重新获得窗口宽高
 			$(".container").height(H);
 			$(".container").width(W);
-			$("#apform").height(0.802 * H);
-			$(".verify").height(0.802 * H);
-			$(".formbody").height(0.802 * H);
+			$("body").eq(0).height(H)
+			$("#apform").height(0.852 * H);
+			$(".verify").height(0.852 * H);
+			$(".formbody").height(0.852 * H);
 			$(".formheader").css({
 				'margin-bottom': 0.021 * 0.802 * H,
 			})
@@ -182,14 +186,14 @@ $(document).ready(function() {
 				// 'bottom':0.0322*0.802*H,
 				'height': 0.058 * 0.802 * H
 			})
-			$(".intention").height(0.22 * 0.802 * H);
+			$(".intention").height(0.21 * 0.802 * H);
 			$(".intention h2").css({
 				'margin-top': 0.041 * 0.802 * H,
-				'margin-bottom': 0.034 * 0.802 * H
+				'margin-bottom': 0.030 * 0.802 * H
 			})
 			$(".buttonwrap").css({
 				'height': 0.058 * 0.802 * H,
-				'margin-top': 0.040 * 0.802 * H
+				'margin-top': 0.037 * 0.802 * H
 			})
 			$(".intention ul li").eq(0).css({
 				'margin-bottom': 0.03 * 0.802 * H
@@ -199,15 +203,15 @@ $(document).ready(function() {
 			})
 
 			$(".self_introduction .title").css({
-				'margin-bottom': 0.028 * 0.802 * H
+				'margin-bottom': 0.026 * 0.802 * H
 			})
 			if (W < '1400') {
 				$(".self_introduction").css({
-					'margin-top': 0.039 * 0.802 * H
+					'margin-top': 0.035 * 0.802 * H
 				})
 			} else {
 				$(".self_introduction").css({
-					'margin-top': 0.046 * 0.802 * H
+					'margin-top': 0.041 * 0.802 * H
 				})
 			}
 			$(".verify input").height(0.0807 * 0.802 * H)
@@ -217,11 +221,11 @@ $(document).ready(function() {
 			$(".verify .inputwrap").css({
 				'margin-top': 0.076 * 0.802 * H
 			})
-			$(".verify .check,.verify .back").css({
+			$(".verify .verify_check,.verify .verify_back").css({
 				'height': 0.0588 * 0.802 * H,
 				'margin-top': 0.3587 * 0.802 * H
 			})
-			$(".verify .back").css({
+			$(".verify .verify_back").css({
 				'margin-top': 0.0357 * 0.802 * H
 			})
 			$(".processform .info").css({
@@ -238,22 +242,24 @@ $(document).ready(function() {
 				'height': 0.0138 * 0.802 * H
 			})
 			$(".dot").eq(0).css({
-				'top': 0.0346 * 0.802 * H
+				'bottom': 0.0346 * 0.802 * H
 			})
 			$(".dot").eq(1).css({
 				'bottom': 0.201 * 0.802 * H
 			})
 			$(".dot").eq(2).css({
-				'bottom': 0.0346 * 0.802 * H
+				'top': 0.0346 * 0.802 * H
+
 			})
 			$(".event").eq(0).css({
-				'top': 0.0346 * 0.802 * H
+				'bottom': 0.0346 * 0.802 * H
+
 			})
 			$(".event").eq(1).css({
-				'bottom': 0.201 * 0.802 * H
+				'bottom': 0.180 * 0.802 * H
 			})
 			$(".event").eq(2).css({
-				'bottom': 0.0346 * 0.802 * H
+				'top': 0.0346 * 0.802 * H
 			})
 			$(".processform .return").css({
 				// 'bottom': 0.047 * 0.802 * H,
@@ -269,137 +275,159 @@ $(document).ready(function() {
 
 	}
 
-	var flag = [false, false, false, false, false, false];
-
-	let Isname = false,
+	var Isname = false,
 		Isprofession = false,
 		Isqq = false,
 		Isphone = false,
 		Isintro = false,
-		Isintention = false;
-	$(".name").on({
-		focus: function() {
-			if (!Isname) {
-				$(".name").val("")
-				$(".name").css({
-					"border-bottom": " 1px solid #2a74a3",
-					"color": "#2a74a3"
-				})
-			}
-		},
-		blur: function() {
-			reg = /^[\u4e00-\u9fa5]{2,10}$/;
-			if (!reg.test($(".name").val())) {
-				$(".name").val("请输入正确的姓名");
-				$(".name").css({
-					"color": "#e81a33"
-				})
-				Isname = false;
-			} else {
-				Isname = true;
-			}
-			$(".name").css({
-				"border-bottom": "1px solid #cccbc8"
-			})
-		}
-	})
-	$(".profession").on({
-		focus: function() {
-			if (!Isprofession) {
-				$(".profession").css({
-					"border-bottom": " 1px solid #2a74a3",
-					"color": "#2a74a3"
-				})
-				$(".profession").val("")
-			}
-		},
-		blur: function() {
-			//这里要改成匹配2018
-			reg = /^201[5678][\u4e00-\u9fa5]{2,15}$/;
-			if (!reg.test($(".profession").val())) {
-				$(".profession").val("请输入正确的年级/专业（例：2018药学）");
-				$(".profession").css({
-					"color": "#e81a33"
-				})
-				Isprofession = false;
-			} else {
-				Isprofession = true;
-			}
-			$(".profession").css({
-				"border-bottom": "1px solid #cccbc8"
-			})
-		}
-	})
-	$(".qq").on({
-		focus: function() {
-			if (!Isqq) {
-				$(".qq").val("")
-				$(".qq").css({
-					"border-bottom": " 1px solid #2a74a3",
-					"color": "#2a74a3"
-				})
-			}
-		},
-		blur: function() {
-			reg = /^[1-9][0-9]{4,10}$/;
-			if (!reg.test($(".qq").val())) {
-				$(".qq").val("qq");
-				$(".qq").css({
-					"color": "#e81a33"
-				})
-				Isqq = false;
-			} else {
-				Isqq = true;
-			}
-			$(".qq").css({
-				"border-bottom": "1px solid #cccbc8"
-			})
-		}
-	})
-	$(".phonenumber").on({
-		focus: function() {
-			if (!Isphone) {
-				$(".phonenumber").val("")
-				$(".phonenumber").css({
-					"border-bottom": " 1px solid #2a74a3",
-					"color": "#2a74a3"
-				})
-			}
-		},
-		blur: function() {
-			reg = /^1[34578]\d{9}$/;
-			if (!reg.test($(".phonenumber").val())) {
-				$(".phonenumber").val("请输入正确的手机号码");
-				$(".phonenumber").css({
-					"color": "#e81a33"
-				})
-				Isphone = false;
-			} else {
-				Isphone = true;
-			}
-			$(".phonenumber").css({
-				"border-bottom": "1px solid #cccbc8"
-			})
-		}
-	})
-	$(".introduction").on({
+		Isintention = false,
+		Isemail = false,
+		reg = new Array();
 
-		focus: function() {
-			if (!Isintro && $(".introduction").val() == "") {
+	//姓名事件
 
-				$(".self_introduction").css({
-					"color": "#2a74a3"
-				})
-
-				// Isintro = true;
-			}
-		},
-		blur: function() {
-			if ($(".introduction").val() != "") {}
-			Isintro = true;
+	$(".name").focus(function() {
+		if (Isname == false) {
+			$(this).val('')
 		}
 
+		$(this).css({
+			"border-bottom": " 1px solid #2a74a3",
+			"color": "#2a74a3"
+		})
 	})
+
+	$(".name").blur(function() {
+
+		reg[0] = /^[\u4e00-\u9fa5]{2,10}$/;
+		if (reg[0].test($(this).val()) == false) {
+			$(this).val("请输入正确的姓名");
+			$(this).css({
+				"color": "#e81a33"
+			})
+			Isname = false;
+		} else {
+			$(this).css({
+				'border-bottom': '2px solid rgba(204, 204, 204, 0.6)'
+			})
+			Isname = true;
+		}
+	})
+
+
+	//专业事件
+
+	$(".profession").focus(function() {
+		if (Isprofession == false) {
+			$(this).val('')
+		}
+		$(this).css({
+			"border-bottom": " 1px solid #2a74a3",
+			"color": "#2a74a3"
+		})
+	})
+
+	$(".profession").blur(function() {
+		reg[4] = /^201[5678][\u4e00-\u9fa5]{2,15}$/;
+		if (reg[4].test($(this).val()) == false) {
+			$(this).val("请输入正确的年级/专业（例：2018药学");
+			$(this).css({
+				"color": "#e81a33"
+			})
+			Isprofession = false;
+		} else {
+			$(this).css({
+				'border-bottom': '2px solid rgba(204, 204, 204, 0.6)'
+			})
+			Isprofession = true;
+		}
+	})
+
+
+	//qq号码事件
+	$(".qq").focus(function() {
+		if (Isqq == false) {
+			$(this).val('')
+		}
+		$(this).css({
+			"border-bottom": " 1px solid #2a74a3",
+			"color": "#2a74a3"
+		})
+	})
+
+	$(".qq").blur(function() {
+		reg[1] = /^[1-9][0-9]{4,9}$/gim;
+		if (reg[1].test($(this).val()) == false) {
+			$(this).val("请输入正确的qq号码");
+			$(this).css({
+				"color": "#e81a33"
+			})
+			Isqq = false;
+		} else {
+			$(this).css({
+				'border-bottom': '2px solid rgba(204, 204, 204, 0.6)'
+			})
+			Isqq = true;
+		}
+	})
+
+
+	//手机号
+	$(".phonenumber").focus(function() {
+		if (Isphone == false) {
+			$(this).val('')
+		}
+		$(this).css({
+			"border-bottom": " 1px solid #2a74a3",
+			"color": "#2a74a3"
+		})
+	})
+
+	$(".phonenumber").blur(function() {
+		reg[2] = /^(0|86|17951)?(13[0-9]|15[012356789]|18[0-9]|14[57]|17[678])[0-9]{8}$/;
+		if (reg[2].test($(this).val()) == false) {
+			$(this).val("请输入正确的手机号");
+			$(this).css({
+				"color": "#e81a33"
+			})
+			Isphone = false;
+		} else {
+			$(this).css({
+				'border-bottom': '2px solid rgba(204, 204, 204, 0.6)'
+			})
+			Isphone = true;
+		}
+	})
+	//验证邮箱信息
+
+
+	$(".email").focus(function() {
+		if (Isemail == false) {
+			$(this).val('')
+		}
+		$(this).css({
+			"border-bottom": " 1px solid #2a74a3",
+			"color": "#2a74a3"
+		})
+	})
+
+	$(".email").blur(function() {
+		reg[3] = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+		if (reg[3].test($(this).val()) == false) {
+			$(this).val("请输入正确的邮箱号码");
+			$(this).css({
+				"color": "#e81a33"
+			})
+			Isemail = false;
+		} else {
+			$(this).css({
+				'border-bottom': '2px solid rgba(204, 204, 204, 0.6)'
+			})
+			Isemail = true;
+		}
+	})
+
+
 
 	$(".intention ul li").click(function() {
 		$(this).siblings().css({
@@ -414,184 +442,301 @@ $(document).ready(function() {
 
 	})
 
-	$(".form_submit").click(function() {
-		if (Isname == true && Isprofession == true && Isqq == true && Isintention == true && Isphone == true && Isintro == true && $(".introduction").val().length <= 200 && $(".introduction").val().length > 0) {
-			let str = $(".selected").text();
-			$(".intention_choose").html(str);
+	//个人介绍事件
 
-
+	$(".introduction").blur(function() {
+		if ($(this).val().length > 0 && $(this).val().length < 200) {
+			Isintro = true;
 		} else {
-			if ($(".introduction").val().length > 200) {
-				alert("输入超限");
-			} else {
-				alert("信息填写不完全");
-			}
+			Isintro = false;
+		}
+
+	})
+	$(".introduction").keydown(function(event) {
+		if ($(this).val().length > 200 && event.keyCode != 8) {
+			alert("字数太多了！");
+			$(this).val($(this).val().substring(0, 200));
+
 		}
 	})
 
-	$("form").submit(function() {
-		if (Isname == true && Isprofession == true && Isqq == true && Isintention == true && Isphone == true && Isintro == true && $(".self_introduction").val().length <= 200 && $(".self_introduction").val().length > 0) {
+
+
+	//验证表单是否有空项
+
+
+	function check_form() {
+		for (var i = 0; i < document.apform.elements.length - 2; i++) {
+			if (document.apform.elements[i].value == "") {
+				alert("表单不可为空!");
+				document.apform.elements[i].focus();
+
+				return false;
+			}
+		}
+		return true;
+
+	}
+
+	function correct_form() {
+		if (Isname == false || Isprofession == false || Isqq == false || Isphone == false || Isintro == false || Isintention == false || Isemail == false) {
+			alert("请正确填写表单信息!")
+			return false;
+		} else {
 
 			return true;
-		} else {
-			if ($(".introduction").val().length > 200) {
-				var a = $(".introduction").val().substr(0, 199);
-				$(".introduction").val(a);
-
-			}
-
-			return false;
 		}
-	});
 
-	//点击查看进程
-	$(".apform .check").click(function() {
-		$(".apform").hide();
-		$(".verify").show();
-	})
 
-	let ISchecknum = false;
-	$(".verify input").on({
-		focus: function() {
-			if (!Ischecknum) {
-				$(".verify input").val("");
+	}
 
-			}
-		},
-		blur: function() {
-			// reg = /^[1-9][0-9]{4,10}$/;
-			// if (!reg.test($(".qq").val())) {
-			// 	$(".qq").val("qq");
-			// 	$(".qq").css({
-			// 		"color": "#e81a33"
-			// 	})
-			// 	Ischecknum = false;
-			// } else {
-			// 	Ischecknum = true;
-			// }
 
-		}
-	})
-	//promise
-	function promisesetajax(obj) {
-		return new Promise((resolve, reject) => {
-			var request = new XMLHttpRequest();
-			request.open(obj.method, obj.url, obj.async);
-			if (obj.method == 'GET') {
-				request.send();
-			} else if (obj.method == 'POST') {
-				request.send(obj.data);
-			}
+	//先触发submit事件,判断一下表单是否为空
+	
 
-			request.onreadystatechange = function() {
-				if (request.readyState === 4) {
-					if (request.status === 200) {
-						var dat = JSON.parse(request.responseText);
-						resolve(dat);
-
-					} else {
-						reject(new Error(request.status))
-					}
+$(".apform").submit(function() {
+	if (check_form() && correct_form()) {
+		let wantdepart = $(".selected").val();
+		$(".intention_choose").val(wantdepart);
+		$.ajax({
+			type: "POST",
+			url: "/api/sign/submit",
+			timeout: 5000,
+			data: {
+				name: $(".name").val(),
+				yearAndMajor: $(".profession").val(),
+				qq: $(".qq").val(),
+				phone: $(".phonenumber").val(),
+				email: $(".email").val(),
+				wantDepartment: $(".intention_choose").val(),
+				selfIntro: $(".introduction").val(),
+			},
+			dataType: "json",
+			//发送成功可以返回的东西
+			success: function(data) {
+				if (data.statusC == 0) {
+					alert("表单提交成功，请注意邮件查收!");
+				} else {
+					alert("表单提交失败!")
 				}
 
+			},
+			error: function(jqXHR) {
+				alert("表单提交失败:" + jqXHR.status);
+			},
+		});
+	}else{
+		return false;
+	}
+
+})
+
+
+
+//----华丽丽的分割线
+
+
+
+//点击查看进程
+$(".apform_check").click(function() {
+	$(".apform").hide();
+	$(".verify").show();
+});
+
+
+$(".verify_check").click(function() {
+	if ($(".inputwrap input").val() == '') {
+		alert('查询编号不可为空!');
+	} else {
+		// $.ajax({
+		//     type: "GET",
+		//     url: "/api/status/get?userCode=" + $("#usercodeinput").val(),
+		//     timeout: 5000,
+		//     dataType: "json",
+		//     //发送成功可以返回的东西
+		//     success: function (data) {
+		//         if (data.success) {
+		//             $(".cname").html(data.name);
+		//             $(".cmajor").html(data.major);
+		//             $(".cdepart").html(data.wantDepart);
+		//
+		//             x = [0, 1, 2];
+		//             x.forEach(function (v) {
+		//                 if (data.status[v])
+		//                     $(".status" + x[v].toString()).html("状态：" + data.status[v].statusName + "，发生于：" + data.status[v].statusHappenTime);
+		//             })
+		//             $(".verify").hide();
+		//             $(".processform").show();
+		//         } else {
+		//             alert("获取失败");
+		//         }
+		//     },
+		//     error: function (jqXHR) {
+		//         alert("服务器错误请重试，错误代码：" + jqXHR.status);
+		//     },
+		// });
+		var obj = {
+			method: "GET",
+			url: "/api/status/get?userCode=" + $("#usercodeinput").val(),
+			timeout: 5000,
+			dataType: 'Default: Intelligent Guess',
+			async: true
+		}
+		promisesetajax(obj).then(function(data) {
+			if (data.success) {
+				$(".cname").html(data.name);
+				$(".cmajor").html(data.major);
+				$(".cdepart").html(data.wantDepart);
+
+				x = [0, 1, 2];
+				x.forEach(function(v) {
+					if (data.status[v])
+						$(".status" + x[2 - v].toString()).html("状态：" + data.status[v].statusName + "，发生于：" + data.status[v].statusHappenTime);
+					else {
+						$(".status" + x[2 - v].toString()).html("");
+					}
+				})
+				// var str22 ='';
+				// for (let i = 0, m = data.status.length; i < m; i++) {
+				//
+				// 	str22 += `
+				// 	<div class="event">
+				// 		<span>${data.status[i].statusHappenTime}</span>
+				// 		<span>${data.status[i].statusName}</span>
+				//
+				// 	</div>
+				// `
+				//
+				//
+				// }
+				// $("events").append(str22);
+				$(".verify").hide();
+				$(".processform").show();
+			} else {
+				alert("查询失败!");
 			}
+		}, function(error) {
+			alert("发生错误：" + error);
 
 		})
 	}
-	//输入编号点击查询
+});
 
-	//要判断是否填写了编号,要返回错误信息
-	function checkprocess() {
-		var obj = {
-			url: 'http://118.25.179.209/api/status/get?UserCode=' + $(".verify input").val(),
-			method: 'GET',
-			data: {
 
-			},
-			dataType: 'Default: Intelligent Guess',
-			async: true
+//输入编号点击返回
+$(".verify_back").click(function() {
+	$('.verify').hide();
+	$('.apform').show();
+});
 
+
+//在报名状态下点击返回，然后回到单号页面
+$(".processform .return").click(function() {
+
+	$(".processform").hide();
+	$(".verify").show();
+})
+
+// 	let ISchecknum = false;
+// 	$(".verify input").on({
+// 		focus: function() {
+// 			if (!Ischecknum) {
+// 				$(".verify input").val("");
+//
+// 			}
+// 		},
+// 		blur: function() {
+// 			// reg = /^[1-9][0-9]{4,10}$/;
+// 			// if (!reg.test($(".qq").val())) {
+// 			// 	$(".qq").val("qq");
+// 			// 	$(".qq").css({
+// 			// 		"color": "#e81a33"
+// 			// 	})
+// 			// 	Ischecknum = false;
+// 			// } else {
+// 			// 	Ischecknum = true;
+// 			// }
+//
+// 		}
+// 	})
+// 	//promise
+function promisesetajax(obj) {
+	return new Promise((resolve, reject) => {
+		var request = new XMLHttpRequest();
+		request.open(obj.method, obj.url, obj.async);
+		if (obj.method == 'GET') {
+			request.send();
+		} else if (obj.method == 'POST') {
+			request.send(obj.data);
 		}
-		promisesetajax(obj).then(function(data) {
-				let str = "";
-				if (data.success) {
 
-					if (data.status == '[]') {
-
-					} else {
-						// for (let i = 0, m = data.status.length; i < m; i++) {
-						str += `
-							<div class="event">
-								<span>${data.status[i].statusHappenTime}</span>
-								<span> 网上报名</span>
-								<span>成功</span>
-							</div>
-					`
-
-
-
-						str += `<div class="events">
-							<div class="event">
-							${data.status[2].statusHappenTime}
-							${data.status[2].statusName}</div>
-							<div class="event"></div>
-							<div class="event"></div>
-						</div>`
-
-						str += `<div class="comments clearfix">
-	         			 	<div class="head"><img src="${data.comment[i].head}" alt="" /></div>
-	          				<div class="right clearfix">
-				            <div class="clearfix" style="margin-bottom: -5px;"> 
-				              	<div class="id"></div>
-				             	 <div class="time">${data.comment[i].createTime}</div>
-				            </div>
-				            <p>${data.comment[i].content}</p>
-				          	</div>
-			        	</div>
-        `
-					}
-					// }
+		request.onreadystatechange = function() {
+			if (request.readyState === 4) {
+				if (request.status === 200) {
+					var dat = JSON.parse(request.responseText);
+					resolve(dat);
 
 				} else {
-					alert("查询失败!");
+					reject(new Error(request.status))
 				}
+			}
 
-				$("#mCSB_1_container").append(str);
+		}
 
-
-
-			},
-			function(error) {
-				alert("发生错误：" + error);
-			})
-
-
-
-	}
-
-
-
-	$(".verify .check").click(function() {
-
-		$(".verify").hide();
-		$(".processform").show();
 	})
+}
+// 	//输入编号点击查询
+// chec// kprocess();
+// 	//要判断是否填写了编号,要返回错误信息
+// 	function checkprocess() {
+// 		// + $(".verify input").val()
+//
+//
+// 		var obj = {
+// 			url: 'http://118.25.179.209/api/status/get?UserCode=1',
+// 			method: 'GET',
+// 			data: {
+//
+// 			},
+// 			dataType: 'Default: Intelligent Guess',
+// 			async: true
+//
+// 		}
+// 		promisesetajax(obj).then(function(data) {
+// 				let str = "";
+// 				if (data.success) {
+//
+// 					if (data.status == '[]') {
+//
+// 					} else {
+// 						for (let i = 0, m = data.status.length; i < m; i++) {
+// 							str += `
+// 							<div class="event">
+// 								<span>${data.status[i].statusHappenTime}</span>
+// 								<span>${data.status[i].statusName}</span>
+//
+// 							</div>
+// 					`
+//
+//
+// 						}
+//
+// 					}
+//
+// 					$("events").append(str);
+// 				}
+//
+//
+// 			},
+// 			function(error) {
+// 				alert("发生错误：" + error);
+//
+// 			})
+//
+//
+//
+// 	}
 
 
-	//输入编号点击返回
-	$(".verify .back").click(function() {
-		$('.verify').hide();
-		$(".apform").show();
-	})
 
-
-	//在报名状态下点击返回，然后回到单号页面
-	$(".processform .return").click(function() {
-
-		$(".processform").hide();
-		$(".verify").show();
-	})
-
-
-
-});
+// });

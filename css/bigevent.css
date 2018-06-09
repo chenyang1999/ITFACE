@@ -35,6 +35,19 @@ textarea{
 	background-color: #f7f7f7;
 	
 }
+h1{
+	font-size: 28px;
+
+	letter-spacing: 2px;
+	color: #333333;
+	text-align: center;
+}
+.line{
+	width: 60px;
+	height: 4px;
+	background-color: #7ecef4;
+	margin:0px auto;
+}
 /*.event{
 	position: absolute;
 	left: 50%;
@@ -214,6 +227,9 @@ textarea{
    .event{
    	width: 86%;
    }
+   .year{
+   	font-size: 26px;
+   }
    /*.mCustomScrollBox{
    	margin-left: 21px;
    }*/
@@ -223,6 +239,9 @@ textarea{
    .event{
    	width: 81%;
    	margin-left: 10px;
+   }
+   .year{
+   	font-size: 24px;
    }
    /*.mCustomScrollBox{
    	margin-left: 21px;
@@ -242,6 +261,15 @@ textarea{
 @media screen and (max-width: 980px){
    .event{
    	width: 79%;
+   	margin-left: 10px;
+   }
+   .year{
+   	font-size: 22px;
+   }
+
+@media screen and (max-width: 860px){
+   .event{
+   	width: 72%;
    	margin-left: 10px;
    }
    .year{

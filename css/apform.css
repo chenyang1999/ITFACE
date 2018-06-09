@@ -95,11 +95,12 @@ button{
 .basic_info>div:first-child{
 	/*width: 75px;*/
 	width: 16%;
-	/*height: 39px;*/
+	/*height: 100%;*/
+	/*line-height: 100%;*/
 	font-size: 20px;
 	font-weight: normal;
 	font-stretch: normal;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 	/*line-height: 69px;*/
 	letter-spacing: 2px;
 	color: #458bac;
@@ -111,7 +112,7 @@ button{
 	width: 83%;
 	/*height: 54px;*/
 	margin-top: 10px;
-	font-size: 20px;
+	font-size: 18px;
 	background-color: rgba(250, 250, 250, 0.96);
 	border:1px solid rgba(250, 250, 250, 0.96);
 	border-bottom: 2px solid rgba(204, 204, 204, 0.6);
@@ -191,7 +192,8 @@ button{
 	border-radius: 8px;
 	border: solid 2px #458bac;
 	clear: both;
-	font-size: 20px;
+	font-size: 16px;
+	line-height: 18px;
 	padding: 2.3%;
 }
 .self_introduction .tip{
@@ -213,7 +215,7 @@ button{
 
 	margin-top: 30px;
 }
-.form_submit,#apform .check{
+.form_submit,#apform .apform_check{
 	/*width: 170px;*/
 	/*width: 170px;*/
 	width: 43.2%;
@@ -245,7 +247,7 @@ button{
 	margin-right: 13.4%;
 
 }
-#apform .check{
+#apform .apform_check{
 background-size: cover;
 	
 	background-image: url(../images/check_process.png);
@@ -254,7 +256,7 @@ background-size: cover;
 	background-position: center;
 
 }
-.form_submit,#apform .check:hover{
+.form_submit,#apform .apform_check:hover{
 	cursor: pointer;
 }
 
@@ -273,6 +275,7 @@ background-size: cover;
 	opacity: 0.96;
 	border: 1px solid white;
 	position: relative;
+	display: none;
 }
 .verify h2{
 
@@ -299,7 +302,7 @@ background-size: cover;
 	width: 63.2%;
 	margin-top: 66px;
 }
-.verify .check,.verify .back{
+.verify .verify_check,.verify .verify_back{
 	/*width: 170px;*/
 	width: 30.3%;
 	/*height: 51px;*/
@@ -320,10 +323,10 @@ background-size: cover;
 	margin-left: 34.85%;
 	margin-top: 311px;
 }
-.verify .check,.verify .back:hover{
+.verify .verify_check,.verify .verify_back:hover{
 	cursor: pointer;
 }
-.verify .back{
+.verify .verify_back{
 
 	background-image: url(../images/back.png);
 	background-position: center;
@@ -333,7 +336,7 @@ background-size: cover;
 
 .processform{
 	width: 23.9%;
-	height: 787px;
+	/*height: 787px;*/
 	background-color: #fafafa;
 	box-shadow: 0px 3px 3px 0px 
 		rgba(0, 0, 0, 0.1);
@@ -342,7 +345,7 @@ background-size: cover;
 	margin: 0px auto;
 	padding:2.08% 2.86% 2.08% 2.86%;
 	position: relative;
-
+	display:none;
 }
 .processform .info{
 	/*height: 17px;*/
@@ -394,16 +397,16 @@ background-size: cover;
 	margin-left: -1.07%;
 }
 .dot:nth-child(3){
-	bottom: 30px;
-
+	
+top: 30px;
 }
 .dot:nth-child(2){
 	bottom: 175px;
 	 
 }
 .dot:nth-child(1){
-	top: 30px;
-	 
+	
+	 bottom: 30px;
 }
 .event{
 	position: absolute;
@@ -411,15 +414,16 @@ background-size: cover;
 	color: #458bac;
 }
 .event:nth-child(3){
-	bottom: 30px;
+	top: 30px;
 
 }
 .event:nth-child(2){
-	bottom: 175px;
-	 
+	/*bottom: 175px;*/
+	bottom: 50%;
+	transform: translate(0,-50%);
 }
 .event:nth-child(1){
-	top: 30px;
+	bottom: 30px;
 	 
 }
 .processform .return{
@@ -436,7 +440,7 @@ background-size: cover;
 	border: none;
 	/*position: absolute;*/
 	/*left: 50%;*/
-	margin-left: 34.85%;
+	margin-left: 31.55%;
 	/*bottom: 41px;*/
 	/*margin: 0px auto;*/
 
@@ -444,6 +448,74 @@ background-size: cover;
 }
 .processform .return:hover{
 	cursor:pointer;
+}
+/*@media screen and (max-width: 1800px)
+{
+	.introduction{
+		font-size:14px;
+		line-height: 16px;
+	}
+	.basic_info input{
+		font-size: 18px;
+	}
+	.intention ul li{
+		font-size: 18px;
+	}
+	.basic_info>div:first-child{
+		font-size: 18px;
+	}
+	.self_introduction div{
+		font-size: 18px;
+	}
+	.formheader{
+		font-size:22px ;
+	}
+	.intention h2{
+		font-size: 18px;
+	}
+	.self_introduction .tip{
+		font-size: 14px;
+	}
+	.verify input{
+		font-size: 23px;
+	}
+	.verify h2{
+		font-size: 21px;
+	}
+}
+@media screen and (max-width: 1600px){
+
+	.logo img{
+		width: 80%;
+	}
+	.basic_info input{
+		font-size: 15px;
+	}
+		.intention ul li{
+		font-size: 16px;
+	}
+		.basic_info>div:first-child{
+		font-size: 16px;
+	}
+		.self_introduction div{
+		font-size: 16px;
+	}
+	.intention h2{
+		font-size: 16px;
+	}
+	.formheader{
+		font-size:20px ;
+	}
+		.self_introduction .tip{
+		font-size: 12px;
+	}
+		.verify input{
+		font-size: 17px;
+	}
+	.verify h2{
+		font-size: 17px;
+	}
+
 }
 @media screen and (max-width: 1400px)
 {
@@ -489,13 +561,20 @@ background-size: cover;
 		font-size: 9px;
 	}
 	.verify h2{
-		font-size: 13px;
+		font-size: 14px;
 	}
 	.verify input{
 		border:solid 1px #458bac;
-		font-size: 12px;
+		font-size: 14px;
+	}
+	.intention ul li{
+		border: solid 1px #458bac;
 	}
 
+
+
+}
+@media screen and (max-width: 1400px){
 
 }
 @media screen and (max-width: 1200px)
@@ -539,3 +618,4 @@ background-size: cover;
 	}*/
 }
 
+*/

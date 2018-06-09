@@ -29,16 +29,16 @@ button{
 .container{
 	position: relative;
 	overflow: hidden;
-	/*background-image: url();
+	background-image: url(../images/department_background.png);
 	background-repeat: no-repeat;
-	background-size: cover;
-*/
+	background-size: 100% 100%;
+
 }
-.back{
+/*.back{
 	width: 100%;
-	/*height: */
+	height: 
 	z-index: 0;
-}
+}*/
 .ball .front_end{
 	width: 11%;
 	height: 8.8%;
@@ -79,7 +79,7 @@ button{
 	/*transform: rotate(-35deg);*/	
 }
 .ball .ui .name{
-	margin-left: -41px;
+	/*margin-left: -41px;*/
 }
 .ui .black{
 	width: 100%;
@@ -171,6 +171,7 @@ button{
 	bottom: -50px;
 	left: 50%;
 	margin-left: -51px;
+	/*transform: translate(-50%,0);*/
 	font-size: 24px;
 	font-weight: normal;
 	font-stretch: normal;
@@ -190,7 +191,7 @@ button{
 	z-index: 100;
 }
 .ball .black{
-	/*opacity: 0;*/
+	opacity: 0;
 	/*visibility: hidden;*/
 	display: none;
 }
@@ -204,12 +205,12 @@ h1{
 	font-stretch: normal;
 	letter-spacing: 2px;
 	color: white;
-	text-align: center;
 	z-index: 300;
-	position: absolute;
+	/*position: absolute;
 	top: 4.8%;
 	left: 50%;
-	margin-left: -59px;
+	margin-left: -59px;*/
+	text-align: center;
 }
 .line{
 	width: 60px;
@@ -231,9 +232,9 @@ h1{
 	cursor: pointer;
 }
 
-/*.ui,.app,.program,.front_end{
+.ui,.app,.program,.front_end{
 	opacity: 0;
-}*/
+}
 
 .depart_intro .front_end{
 
@@ -252,18 +253,6 @@ h1{
 }
 
 
-
-.depart_intro .front_end .close{
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 1.84%;
-	height: 1.84%;
-}
-.depart_intro .front_end .close img{
-	width: 100%;
-	height: auto;
-}
 .close :hover{
 	cursor: pointer;
 }
@@ -284,14 +273,6 @@ h1{
 	z-index: 500;
 }
 
-
-.depart_intro .ui .close{
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 1.84%;
-	height: 1.84%;
-}
 
 .depart_intro .app{
 
@@ -316,8 +297,10 @@ h1{
 	letter-spacing: 2px;
 	text-align: center;
 	margin:0px auto;
-	margin-top: 65px;
-	margin-bottom: 50px;
+	/*margin-top: 65px;*/
+	/*margin-bottom: 50px;*/
+	margin-top: 17.5%;
+	margin-bottom: 14.2%;
 	color: #458bac;
 
 }
@@ -325,16 +308,17 @@ h1{
 	width: 80%;
 	margin:0px auto;
 	font-size: 18px;
+	/*line-height: 27px;*/
 }
 
-.depart_intro .app .close{
+.depart_intro .app .close,.depart_intro .ui .close,.depart_intro .front_end .close,.depart_intro .program .close{
 	position: absolute;
 	top: 20px;
 	right: 20px;
 	width: 1.84%;
-	height: 1.84%;
+	
 }
-.depart_intro .app .close img,.depart_intro .ui .close img,.depart_intro .app .program img,.depart_intro .app .front_end img{
+.depart_intro .app .close img,.depart_intro .ui .close img,.depart_intro .program .close img,.depart_intro .front_end .close img{
 	width: 100%;
 	height: auto;
 }
@@ -355,10 +339,37 @@ h1{
 }
 
 
-.depart_intro .program .close{
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 1.84%;
-	height: 1.84%;
+@media screen and (max-width: 1400px){
+.depart_intro .app p, .depart_intro .ui p, .depart_intro .program p, .depart_intro .front_end p{
+	font-size: 14px;
+}
+.depart_intro .app h3, .depart_intro .ui h3, .depart_intro .program h3, .depart_intro .front_end h3{
+	font-size: 18px;
+}
+	h1{
+		font-size: 22px;
+	}
+	.ball .name{
+		font-size: 17px;
+		/*margin-left:-35x;*/
+	}
+
+}
+
+@media screen and (max-width: 1250px){
+.depart_intro .app p, .depart_intro .ui p, .depart_intro .program p, .depart_intro .front_end p{
+	font-size: 12px;
+}
+.depart_intro .app h3, .depart_intro .ui h3, .depart_intro .program h3, .depart_intro .front_end h3{
+	font-size: 16px;
+}
+@media screen and (max-width: 1100px){
+.depart_intro .app p, .depart_intro .ui p, .depart_intro .program p, .depart_intro .front_end p{
+	font-size: 11px;
+}
+.depart_intro .app h3, .depart_intro .ui h3, .depart_intro .program h3, .depart_intro .front_end h3{
+	font-size: 16px;
+}
+
+
 }

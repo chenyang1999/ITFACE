@@ -14,7 +14,11 @@ let write_top1,
 	write_left1,
 	boxh,
 	boxw,
-	box_top;
+	button_w = 170,
+	button_h = 51,
+	box_top,
+	com_h = 562;
+
 $write = $(".write");
 if ($.browser.version != "7.0") //判断是不是IE7 ，IE7下不支持“$(window).width()”
 {
@@ -23,52 +27,306 @@ if ($.browser.version != "7.0") //判断是不是IE7 ，IE7下不支持“$(wind
 	H2 = $(".container_in").height();
 	write_top1 = $(".make_comment").offset().top
 	write_left1 = $(".make_comment").offset().left
+	box_top = $(".index_topic").offset().top
+	button_w = parseInt($(".make_comment").width())
+	button_h = parseInt($(".make_comment").height())
+	com_h = 0.58 / 1.9 * W;
 	$(window).resize(function() { //浏览器缩放重新获得窗口宽高
 		H = $(window).height();
 		W = $(window).width();
 		H2 = $(".container_in").height();
 		write_top1 = $(".make_comment").offset().top
 		write_left1 = $(".make_comment").offset().left
+		box_top = $(".index_topic").offset().top
+		button_w = parseInt($(".make_comment").width())
+		button_h = parseInt($(".make_comment").height())
+		com_h = 0.58 / 1.9 * W;
 	});
+
+	// if(W<'1920' && W>1700)
+	// {
+	// 	com_h = 562;
+	// }else if(W<=1700 && W>1500)
+	// {
+
+	// }
+
 
 	$(".container").height(H);
 	$(".container").width(W);
 	// $(".header h1").css({'margin-top':(H-H2)/2});
-	$(".index_topic").height(H * 0.5);
-	// $(".write").height(H*0.5);
+	$(".index_topic").height(H * 0.414);
+	$(".index_topic").css({
+		'margin-bottom': 0.041 * H,
+		'margin-top': 0.027 * H
+	})
+	$(".comments").css({
+		// 'min-height': 0.284 * H * 0.414,
+		'margin-bottom': 0.067 * 0.414 * H,
+		'min-height': 0.066 * W,
 
-	if ((W - 0) > 1550) {
-		boxw = 1125;
-		box_top = 197.667;
-	} else if ((W - 0) > 1250 && (W - 0) < 1550) {
-		boxw = 985;
+	})
+	$(".comments .head").css({
+		// 'height': 0.645*0.284 * H * 0.414,
+		// 'margin-top': 0.27*0.645*0.284 * H * 0.414
+		'height': 0.0427 * W,
+		'margin-top': 0.012 * W
+	})
+	$(".make_comment").css({
+		'height': 0.0266 * W,
+		'line-height': 0.0266 * W + 'px'
+	})
+	$(".make_comment_wrap").css({
+		'height': 0.0266 * W,
+		'line-height': 0.0266 * W + 'px'
+	})
+	$(".comments .right").css({
+		'margin-top': 0.125 * 0.284 * H * 0.414
+	})
+	$(".line").css({
+		'margin-top': 0.025 * H
+	})
+	if ($(".write").css('z-index') > 0) {
 
-		box_top = 187.667;
-	} else {
-		boxw = 956;
-		box_top = 177.667;
+		// $(".write").height(H * 0.5);
+		$(".write").width(0.6 * W);
+		$(".write").height(com_h);
+		$(".write").css({
+			'margin-left':-0.3*W
+		})
 	}
-	boxh = $write.css('height');
+
+	// $(".write").width(0.6*W);
+
+	// if ((W - 0) > 1550) {
+	// 	boxw = 1125;
+	// 	box_top = 197.667;
+	// } else if ((W - 0) > 1250 && (W - 0) < 1550) {
+	// 	boxw = 985;
+
+	// 	box_top = 187.667;
+	// } else {
+	// 	boxw = 956;
+	// 	box_top = 177.667;
+	// }
+	// boxw = parseInt($write.css('width'));
+	// boxh = parseInt($write.css('height'));
+
+	//当年想要按比例缩放
+	$(".write textarea").css({
+		'height': 0.453 * com_h - 22
+	})
+	$(".write .text").css({
+		'height': 0.453 * com_h,
+		'margin-top': 0.03 * com_h
+	})
+	// $(".write").css({
+	// 	'height': 0.52 * H
+	// })
+	$(".write .header").css({
+		'margin-top': 0.071 * com_h,
+	})
+	$(".write .close").css({
+		'top': 0.0266 * com_h
+	})
+	$(".select_head").css({
+		'height': 0.129 * com_h,
+	})
+	$(".write .left_arrow").css({
+		'margin-top': 0.046 * com_h
+	})
+	$(".write .head").css({
+		'height': 0.129 * com_h
+	})
+
+	$(".write .head img").css({
+		'height': 0.129 * com_h
+	})
+	$(".write .head_tip").css({
+		'margin-top': 0.028 * com_h
+	})
+	$(".write .id").css({
+		'height': 0.076 * com_h,
+		'margin-top': 0.048 * com_h
+	})
+	$(".write .id input").css({
+		'height': 0.067 * com_h
+	})
+	$(".write .id_tip").css({
+		'margin-top': 0.028 * com_h
+	})
+	$(".write .verify_tip").css({
+		'margin-top': 0.028 * com_h
+	})
+	$(".write .verify").css({
+		'height': 0.064 * com_h,
+		'margin-top': 0.02 * com_h
+	})
+	$(".write .verify input").css({
+		'height': 0.056 * com_h
+	})
+	$(".verify_img").css({
+		'height': 0.071 * com_h,
+		'margin-top': 0.021 * com_h
+	})
+	$(".verify_img img").css({
+		'height': 0.071 * com_h,
+	})
+	$(".write .submit").css({
+		'height': 0.087 * com_h,
+		'margin-top': 0.0177 * com_h,
+		'line-height': 0.087 * com_h + 'px'
+	})
+	$(".text_tip").css({
+		'margin-top': 0.028 * com_h
+	})
+	$(".write .right_arrow").css({
+		'margin-top': 0.046 * com_h
+	})
+
+
+
+	// boxw = $write.css('width');
+	// boxh = 0.52 * H;
 
 	$(window).resize(function() { //浏览器缩放重新获得窗口宽高
+		// com_h = 0.58/21.9*W;
+		// $(".write").width(0.6*W);
 		$(".container").height(H);
 		$(".container").width(W);
 		// $(".header h1").css({'margin-top':(H-H2)/2});
-		// console.log(H+"-"+H2)
-		$(".index_topic").height(H * 0.5);
-		// $(".write").height(H*0.5);
+		$(".index_topic").height(H * 0.414);
+		$(".index_topic").css({
+			'margin-bottom': 0.041 * H,
+			'margin-top': 0.027 * H
+		})
+		$(".comments").css({
+			// 'min-height': 0.284 * H * 0.414,
+			'margin-bottom': 0.067 * 0.414 * H,
+			'min-height': 0.066 * W,
 
-		if ((W - 0) > 1550) {
-			boxw = 1125;
-			box_top = 197.667;
-		} else if ((W - 0) > 1250 && (W - 0) < 1550) {
-			boxw = 985;
-			box_top = 187.667;
-		} else {
-			boxw = 956;
-			box_top = 177.667;
-		}
-		boxh = $write.css('height');
+		})
+		$(".comments .head").css({
+			// 'height': 0.645*0.284 * H * 0.414,
+			// 'margin-top': 0.27*0.645*0.284 * H * 0.414
+			'height': 0.0427 * W,
+			'margin-top': 0.012 * W
+		})
+		$(".make_comment").css({
+			'height': 0.0266 * W,
+			'line-height': 0.0266 * W + 'px'
+		})
+		$(".make_comment_wrap").css({
+			'height': 0.0266 * W,
+			'line-height': 0.0266 * W + 'px'
+		})
+		$(".comments .right").css({
+			'margin-top': 0.125 * 0.284 * H * 0.414
+		})
+		$(".line").css({
+			'margin-top': 0.025 * H
+		})
+
+	if ($(".write").css('z-index') > 0) {
+
+		// $(".write").height(H * 0.5);
+		$(".write").width(0.6 * W);
+		$(".write").height(com_h);
+		$(".write").css({
+			'margin-left':-0.3*W
+		})
+	}
+
+
+
+
+		// if ((W - 0) > 1550) {
+		// 	boxw = 1125;
+		// 	box_top = 197.667;
+		// } else if ((W - 0) > 1250 && (W - 0) < 1550) {
+		// 	boxw = 985;
+
+		// 	box_top = 187.667;
+		// } else {
+		// 	boxw = 956;
+		// 	box_top = 177.667;
+		// }
+		// boxw = parseInt($write.css('width'));
+		// boxh = parseInt($write.css('height'));
+
+		//当年想要按比例缩放
+		$(".write textarea").css({
+			'height': 0.453 * com_h - 22
+		})
+		$(".write .text").css({
+			'height': 0.453 * com_h,
+			'margin-top': 0.03 * com_h
+		})
+
+		// $(".write").css({
+		// 	'height': 0.52 * H
+		// })
+		$(".write .header").css({
+			'margin-top': 0.071 * com_h,
+		})
+		$(".write .close").css({
+			'top': 0.0266 * com_h
+		})
+		$(".select_head").css({
+			'height': 0.129 * com_h,
+		})
+		$(".write .left_arrow").css({
+			'margin-top': 0.046 * com_h
+		})
+		$(".write .head").css({
+			'height': 0.129 * com_h
+		})
+
+		$(".write .head img").css({
+			'height': 0.129 * com_h
+		})
+		$(".write .head_tip").css({
+			'margin-top': 0.028 * com_h
+		})
+		$(".write .id").css({
+			'height': 0.076 * com_h,
+			'margin-top': 0.048 * com_h
+		})
+		$(".write .id input").css({
+			'height': 0.067 * com_h
+		})
+		$(".write .id_tip").css({
+			'margin-top': 0.028 * com_h
+		})
+		$(".write .verify_tip").css({
+			'margin-top': 0.028 * com_h
+		})
+		$(".write .verify").css({
+			'height': 0.064 * com_h,
+			'margin-top': 0.02 * com_h
+		})
+		$(".write .verify input").css({
+			'height': 0.056 * com_h
+		})
+		$(".verify_img").css({
+			'height': 0.071 * com_h,
+			'margin-top': 0.021 * com_h
+		})
+		$(".verify_img img").css({
+			'height': 0.071 * com_h,
+		})
+		$(".write .submit").css({
+			'height': 0.087 * com_h,
+			'margin-top': 0.0177 * com_h,
+			'line-height': 0.087 * com_h + 'px'
+		})
+		$(".text_tip").css({
+			'margin-top': 0.028 * com_h
+		})
+		$(".write .right_arrow").css({
+			'margin-top': 0.046 * com_h
+		})
+
 	});
 
 } else {
@@ -77,7 +335,7 @@ if ($.browser.version != "7.0") //判断是不是IE7 ，IE7下不支持“$(wind
 
 // })
 
-let HEAD_SIZE = 3; //记录头像的个数
+let HEAD_SIZE = 6; //记录头像的个数
 let headimg = 1; //默认显示第一个头像
 $(".right_arrow").click(function() {
 	if (headimg == HEAD_SIZE) {
@@ -97,6 +355,10 @@ $(".left_arrow").click(function() {
 	console.log(headimg)
 
 })
+
+function headshow() {
+	$(".write .head li").eq(headimg - 1).show().siblings().hide();
+}
 
 //点击打开弹框，弹出发表评论框
 //我先让评论框放到我要留言下面
@@ -121,112 +383,138 @@ $(".left_arrow").click(function() {
 // boxh = $write.css('height');
 
 // 点击我要留言后的展示效果
-$(".make_comment").click(function() {
-	//先把遮罩层放好位置
-	$(".writewrap").css({
-		'width': boxw,
-		'height': '562px',
-		'top': box_top,
-		'left': (W - boxw) / 2,
-		'z-index': '50',
+// $(".make_comment").click(function() {
 
-	})
+
+// })
+$(".make_comment").click(function() {
+	boxw = 0.6 * W;
+	// boxh = parseInt($(".index_topic").css('height'));
+	box_top = $(".index_topic").offset().top
+	//先把遮罩层放好位置
+	// $(".writewrap").css({
+	// 	'width': boxw,
+	// 	'height': '562px',
+	// 	'top': box_top,
+	// 	'left': (W - boxw) / 2,
+	// 	'z-index': '50',
+
+	// })
 	//先把这个框藏在按钮的下面
 	$write.css({
-		'display':'block',
+		'display': 'block',
 
 		'top': write_top1,
-		'left': write_left1
+		// 'left': write_left1,
+		'z-index': '100',
+		'left': '50%',
+		'margin-left': -button_w / 2
 	});
 	//把框移到屏幕中间，并令其成为最高的一层
-	$write.animate({
-		'z-index': '100',
-		'top': '(H-51)/2',
-		'left': '(W-171)/2',
+	// $write.animate({
+	// 	// 'z-index': '100',
+	// 	'top': (H - button_h) / 2,
+	// 	// 'left': (W-171)/2,
 
-	}, 300)
+	// }, 100, function() {
+		$write.animate({
+
+
+			'width': boxw,
+			'height': com_h,
+			'top': box_top,
+			// 'left': (W - boxw) / 2,
+			// 'top':'50%',
+			// 'left':'50%',
+			'margin-left': -boxw / 2,
+			// 'margin-top':-0.25*H
+
+		}, 300, function() {
+			//接下来就是展开遮罩层的动画了
+			// setTimeout(function() {
+			// 	$(".writewrap").show();
+			// 	$(".writewrap").animate({
+			// 		'width': '100%',
+			// 		'height': H,
+			// 		'top': '0',
+			// 		'left': '0'
+
+			// 	}, 300)
+			// }, 50)
+
+		})
+	// })
 	//展开该框（其实这里应该采取等比例的作法让展开看起来更贴合事实）
-	$write.animate({
 
+	// $(window).resize(function() {
+	// 	$write.css({
+	// 		'width': boxw,
+	// 		'height': 0.52 * H,
+	// 		// 'top': box_top,
+	// 		// 'left': (W - boxw) / 2,
+	// 		'top': '50%',
+	// 		'left': '50%',
+	// 		'margin-left': -boxw / 2,
+	// 		'margin-top': -0.25 * H
+	// 	})
 
-		'width': boxw,
-		'height': 0.5*H,
-		'top': box_top,
-		'left': (W - boxw) / 2,
+	// })
 
-	}, 300, function() {
-		//接下来就是展开遮罩层的动画了
-		setTimeout(function() {
-			$(".writewrap").show();
-			$(".writewrap").animate({
-				'width': '100%',
-				'height': H,
-				'top': '0',
-				'left': '0'
-
-			}, 300)
-		}, 50)
-
-	})
 
 
 })
 
+
 $(".write .close").click(function() {
 	//先收起遮罩层并隐藏
-	$(".writewrap").animate({
-		'width': boxw,
-		'height': 0.5*H,
-		'top': box_top,
-		'left': (W - boxw) / 2,
-		'z-index': '50',
+	// alert("666")
+	// $(".writewrap").animate({
+	// 	'width': boxw,
+	// 	'height': 0.5 * H,
+	// 	'top': box_top,
+	// 	'left': (W - boxw) / 2,
+	// 	'z-index': '50',
 
-	}, 300)
+	// }, 300)
 
-	$(".writewrap").hide(function() {
-		//接下来这个框应该先回到中间
-		setTimeout(function() {
-			$write.animate({
+	// $(".writewrap").hide(function() {
+	//接下来这个框应该先回到中间
+	setTimeout(function() {
+		$write.animate({
 
 
-				'width': '171px',
-				'height': '50px',
-				'top': (H - 51) / 2,
-				'left': (W - 170) / 2
+			'width': button_w,
+			'height': button_h,
+			'top': (H - button_h) / 2,
+			// 'left': (W - 170) / 2,
+			'margin-left': -button_w / 2
+		})
+		//接下来把它移回去
+
+
+
+		$write.animate({
+
+			'top': write_top1,
+			// 'left': write_left1
+			// 'margin-left':-button_w/2
+
+		}, 50, function() {
+			$write.css({
+				'z-index': '-5',
+				'display': 'none'
 			})
-			//接下来把它移回去
+		});
 
-
-
-			$write.animate({
-
-				'top': write_top1,
-				'left': write_left1
-
-			}, 150, function() {
-				$write.css({
-					'z-index': '-5',
-					'display':'none'
-				})
-			});
-
-		}, 10)
-	});
+	}, 10)
+	// });
 });
-
-function fillscreen() {
-
-}
-
-function headshow() {
-	$(".write .head li").eq(headimg - 1).show().siblings().hide();
-}
 
 
 
 let Iscomment = false,
 	Isverify = false,
-Isid = false;
+	Isid = false;
 
 //id输入 ??字数限制呢
 $(".write .id").on({
@@ -237,17 +525,19 @@ $(".write .id").on({
 	}
 })
 //留言框判断
+//如果用户自己发起删除不应该判断为超出
 $(".write textarea").on({
 	focus: function() {
 		if (!Iscomment && $(".write textarea").val() == '') {
 			Iscomment = true;
 		}
 	},
-	keydown: function() {
-		if ($(".write textarea").val().length > 80) {
+	keydown: function(event) {
+
+		if ($(".write textarea").val().length > 80 && event.keyCode != 8) {
 			alert("字数太多了！");
 			$(".write textarea").val($(".write textarea").val().substring(0, 80));
-			
+
 		}
 	}
 })
@@ -271,18 +561,41 @@ $(".write .submit").click(function() {
 	} else if (!Isverify) {
 		alert("请输入验证码！");
 	} else {
-		var msg = $(".write textarea").val(),
-			msg = htmlEncodeJQ(msg);
-		var com = {
-			url: 'http://118.25.179.209/api/comment/get',
+		// var msg = $(".write textarea").val(),
+		// 	msg = htmlEncodeJQ(msg);
+		let com = {
+			url: 'http://118.25.179.209/api/comment/submit',
 			method: 'POST',
 			data: {
-				content: msg
+				content: $(".write textarea").val(),
+				head: headimg,
+				identify: $(".verify input").val(),
+
 			},
 			dataType: 'Default: Intelligent Guess',
 			async: true
 
 		}
+
+
+
+		promisesetajax(com).then(function(data) {
+
+				if (data.statusCode == 1) {
+					alert("留言提交失败！");
+
+				} else if (data.statusCode == 2) {
+					alert("验证码错误！");
+				} else if (data.statusCode == 0) {
+					alert("留言发表成功!");
+				}
+
+
+
+			},
+			function(error) {
+				alert("发生错误：" + error);
+			})
 	}
 })
 
@@ -298,12 +611,13 @@ $(window).on("load", function() {
 
 });
 
+//滚动条滑到底的事件！！
 $(".index_topic").mCustomScrollbar({
 
 	callbacks: {
 		whileScrolling: function() {
 			if (parseInt($(".mCSB_dragger").css("bottom")) < "4") {
-				// addcomment();
+				addcomment();
 			}
 
 		}
@@ -313,6 +627,36 @@ $(".index_topic").mCustomScrollbar({
 
 //更换验证码事件
 function changeverify() {
+	var verify = {
+		url: 'http://118.25.179.209/api/comment/submit',
+		method: 'POST',
+		data: {
+
+		},
+		dataType: 'Default: Intelligent Guess',
+		async: true
+
+	}
+
+	promisesetajax(obj).then(function(data) {
+			let imgurl = "";
+			if (data.comment == '[]') {
+
+			} else {
+
+				imgurl = data.content;
+				$(".verify_img img").attr('src', imgurl);
+
+
+			}
+
+
+
+		},
+		function(error) {
+			alert("发生错误：" + error);
+		})
+
 
 
 }
@@ -355,10 +699,10 @@ function promisesetajax(obj) {
 function addcomment() {
 
 	var obj = {
-		url: 'http://118.25.179.209/api/comment/get',
+		url: 'http://118.25.179.209/api/comment/get?code=',
 		method: 'GET',
 		data: {
-
+				code :$(".index_topic .comments:last-child").attr('id')
 		},
 		dataType: 'Default: Intelligent Guess',
 		async: true
@@ -373,7 +717,7 @@ function addcomment() {
 			} else {
 				for (let i = 0, m = data.comment.length; i < m; i++) {
 
-					str += `<div class="comments clearfix">
+					str += `<div class="comments clearfix" id="${data.comment[i].code}">
 	         			 	<div class="head"><img src="${data.comment[i].head}" alt="" /></div>
 	          				<div class="right clearfix">
 				            <div class="clearfix" style="margin-bottom: -5px;"> 
@@ -427,7 +771,7 @@ function addcomment() {
 }
 
 //评论初始化函数
-addcomment();
+// addcomment();
 
 
 

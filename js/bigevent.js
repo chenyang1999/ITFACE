@@ -1,4 +1,3 @@
-
 window.onload = function() {
 	$baller = $(".ball");
 	$pole = $(".plate .pole"); // 杆子
@@ -54,6 +53,7 @@ window.onload = function() {
 			'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
 
 		})
+
 		$eventboard.css({
 			'width': W * 0.061 + 'px',
 			'height': 0.0375 * W + 'px',
@@ -74,8 +74,6 @@ window.onload = function() {
 		initial_degree();
 
 		//将牌子的偏转坐标移到正确的位置
-
-	
 
 
 
@@ -112,18 +110,48 @@ window.onload = function() {
 			})
 			//控制牌子的角度
 			initial_degree();
-		// 	$eventboard.css({
-		// 	'width': W * 0.061 + 'px',
-		// 	'height': 0.0305 * W + 'px',
-		// 	'bottom': h - 0 + plate_L,
-		// 	'margin-left': -0.0305 * W + 'px',
-		// 	'line-height': 0.0305 * W + 'px',
-		// 	'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
+			let Isbig = false;
+			let big;
+			for(let i=0 ;i<5;i++)
+			{
+				if($eventboard.eq(i).css('display')!='none')
+				{
 
-		// })
+					Isbig =true;
+					big = i;
+				}
+				
+			}
+			if (Isbig == false) {
+				
+				$eventboard.css({
+					'width': W * 0.061 + 'px',
+					'height': 0.0305 * W + 'px',
+					'bottom': h - 0 + plate_L,
+					'margin-left': -0.0305 * W + 'px',
+					'line-height': 0.0305 * W + 'px',
+					'transform-origin': 'center ' + (plate_H + r + plate_L) + 'px'
+				})
+			} else {
+			
+				$eventboard.eq(big).css({
+				'width': '55.5%',
+				'height': '62.3%',
+				'margin-left': '-27.75%',
+				'margin-bottom': -0.3118 * H,
+				'bottom': '50%'
+			})
+				console.log(big)
+				$eventtext.eq(big).css({
+				'height': 0.74 *0.623*H,
+				'margin-top': -0.5 * 0.74 * 0.623*H,
+				// 'margin-bottom': -0.3118*H,
+			})
+			}
 
-		//将牌子的偏转坐标移到正确的位置
 
+
+			//将牌子的偏转坐标移到正确的位置
 
 
 
@@ -146,7 +174,7 @@ window.onload = function() {
 			'bottom': h - 0 + fall_length + plate_L,
 			'transform-origin': 'center ' + (plate_H + fall_length + r + plate_L) + 'px'
 		})
-		
+
 
 	}
 
@@ -379,11 +407,12 @@ window.onload = function() {
 
 
 	}
-	
 
+var openflag = false;
 
 	//展示爱特大事件
 	function displayevent(index) {
+		openflag = true;
 
 		$eventboard.eq(index).css({
 			'display': 'block',
@@ -405,7 +434,7 @@ window.onload = function() {
 		}, 600, function() {
 			$eventtext.eq(index).css({
 				'height': 0.74 * parseInt($eventboard.eq(index).css('height')),
-				'margin-top': -0.5* 0.74 * parseInt($eventboard.eq(index).css('height')),
+				'margin-top': -0.5 * 0.74 * parseInt($eventboard.eq(index).css('height')),
 				// 'margin-bottom': -0.3118*H,
 			})
 			$eventtext.eq(index).show();
@@ -428,11 +457,18 @@ window.onload = function() {
 
 	//点击×关闭艾特大事记
 	$(".yearevent .close").click(function() {
+
 		var index = $(".eventwrap .close").index(this);
 		// alert(index)
 		closeevent(index);
 	})
 	//关闭爱特大事件的函数
+
+
+// $(".container").click(function(){
+// 	closeevent();
+// })
+
 	function closeevent(index) {
 		$(".year").eq(index).animate({
 			'opacity': '0'
@@ -483,52 +519,52 @@ window.onload = function() {
 
 	}
 
-	function ballmove() {
+	// function ballmove() {
 
-		$baller = $(".ball");
-		var ball = new Object();
+	// 	$baller = $(".ball");
+	// 	var ball = new Object();
 
-		ball.y = parseInt($baller.css('top'));
-		let ballfalllen = 100;
-		ball.v = 0;
-		ball.a = 0.1;
-		ball.degree = 0;
-		ball.degreea = 60;
-		//这是小球的下落
-		let t1 = setInterval(function() {
-			if (ball.y - ball.v > 0.7 * H)
+	// 	ball.y = parseInt($baller.css('top'));
+	// 	let ballfalllen = 100;
+	// 	ball.v = 0;
+	// 	ball.a = 0.1;
+	// 	ball.degree = 0;
+	// 	ball.degreea = 60;
+	// 	//这是小球的下落
+	// 	let t1 = setInterval(function() {
+	// 		if (ball.y - ball.v > 0.7 * H)
 
-			{
-				clearInterval(t1);
+	// 		{
+	// 			clearInterval(t1);
 
 
-				let t2 = setInterval(function() {
-					if (ball.v < 0) {
-						ball.v = 0;
-						clearInterval(t2);
+	// 			let t2 = setInterval(function() {
+	// 				if (ball.v < 0) {
+	// 					ball.v = 0;
+	// 					clearInterval(t2);
 
-						ballmove();
-					}
-					ball.degreea -= 10;
-					ball.degree += ball.degreea;
-					$baller.css({
-						'transform': 'rotate(' + ball.degree + 'deg)'
-					})
-					ball.v -= ball.a;
-					ball.y -= ball.v;
-					$baller.css({
-						'top': ball.y
-					})
-				}, 20)
-			}
-			ball.v += ball.a;
-			ball.y += ball.v;
-			$baller.css({
-				'top': ball.y
-			})
-		}, 20)
-	}
-	ballmove();
+	// 					ballmove();
+	// 				}
+	// 				ball.degreea -= 10;
+	// 				ball.degree += ball.degreea;
+	// 				$baller.css({
+	// 					'transform': 'rotate(' + ball.degree + 'deg)'
+	// 				})
+	// 				ball.v -= ball.a;
+	// 				ball.y -= ball.v;
+	// 				$baller.css({
+	// 					'top': ball.y
+	// 				})
+	// 			}, 20)
+	// 		}
+	// 		ball.v += ball.a;
+	// 		ball.y += ball.v;
+	// 		$baller.css({
+	// 			'top': ball.y
+	// 		})
+	// 	}, 20)
+	// }
+	// ballmove();
 
 }
 
