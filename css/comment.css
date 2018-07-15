@@ -86,6 +86,7 @@ button{
 	border-radius: 8px;
 	/*border: 1px solid #ffffff;*/
 	margin-bottom: 30px;
+	padding: 0px 0px 2% 8%;
 }
 .comments .head{
 	/*width: 56px;*/
@@ -95,7 +96,7 @@ button{
 	/*margin-left: 90px;*/
 	margin-right: 4.9%;
 	/*margin-right: 55px;*/
-	margin-left: 8.05%;
+	/*margin-left: 8.05%;*/
 	margin-top: 22px;
 	overflow: hidden;
 	

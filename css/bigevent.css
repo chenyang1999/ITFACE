@@ -30,6 +30,7 @@ textarea{
 	font-family: MicrosoftYaHei;
 }
 .container{
+	/*min-width: 1000px;*/
 	overflow: hidden;
 	position: relative;
 	background-color: #f7f7f7;
@@ -41,6 +42,8 @@ h1{
 	letter-spacing: 2px;
 	color: #333333;
 	text-align: center;
+	margin-top: 70px;
+	font-weight: normal;
 }
 .line{
 	width: 60px;
@@ -160,24 +163,26 @@ h1{
 }
 
 .event {
-	width: 89%;
+	width: 680px;
+	min-height: 50px;
 	/*width: 100%;*/
 	/*min-height: 44px;*/
 	
 	border-radius: 10px;
 	border: solid 2px #458bac;
-	padding: 23px 30px 23px 30px;
+	padding: 20px;
 	margin-bottom: 29px;
+	font-size: 16px;
 	
 }
 .yearevent{
-	width: 1067px;
-	height: 625px;
+	max-width: 1067px;
+	max-height: 625px;
 	position: absolute;
 	left: 50%;
 	margin-left: -533.5px;
 	/*top: 50%;*/
-	margin-top: -312.5px;
+	/*margin-top: -312.5px;*/
 	z-index: -200;
 	background-color: rgba(255, 255, 255, 0.85);
 	border-radius: 10px;
@@ -185,6 +190,8 @@ h1{
 	/*padding-top: 85px;
 	padding-bottom: 85px;*/
 	display:none;
+	overflow: hidden;
+
 }
 .year {
 
@@ -206,7 +213,7 @@ h1{
 	width: 15px;
 	height: 15px;
 	position: absolute;
-	top: 23px;
+	top: 15px;
 	right: 26px;
 	z-index: -200;
 	margin-top: -13px;
@@ -220,59 +227,101 @@ h1{
 .event_wrap{
 
 }
-
-
-
-@media screen and (max-width: 1557px){
-   .event{
-   	width: 86%;
-   }
-   .year{
-   	font-size: 26px;
-   }
-   /*.mCustomScrollBox{
-   	margin-left: 21px;
-   }*/
-   
+.event div{
+	line-height: 23px;
 }
-@media screen and (max-width: 1220px){
+
+
+
+@media screen and (max-width: 1500px){
+	.yearevent{
+		max-height: 530px;
+	}
    .event{
-   	width: 81%;
-   	margin-left: 10px;
+   	width: 570px;
+   	min-height: 31px;
    }
    .year{
    	font-size: 24px;
    }
-   /*.mCustomScrollBox{
-   	margin-left: 21px;
-   }*/
-   
-}
-@media screen and (max-width: 1095px){
-   .event{
-   	width: 73%;
-   	margin-left: 29px;
-   }
-   /*.mCustomScrollBox{
-   	margin-left: 21px;
-   }*/
-   
-}
-@media screen and (max-width: 980px){
-   .event{
-   	width: 79%;
-   	margin-left: 10px;
-   }
-   .year{
-   	font-size: 22px;
+   h1
+   {
+   	font-size: 24px;
    }
 
-@media screen and (max-width: 860px){
+}
+@media screen and (max-width: 1366px){
+		.yearevent{
+		max-height: 470px;
+	}
    .event{
-   	width: 72%;
-   	margin-left: 10px;
+   	width: 500px;
+   	min-height: 25px;
    }
    .year{
    	font-size: 22px;
    }
+   h1{
+   	font-size: 20px;
+   }
+   .line{
+   	height: 3px;
+   	margin-top: 11px;
+   }
+
 }
+@media screen and (max-width: 1200px){
+	.yearevent{
+		max-height: 412px;
+	}
+   .event{
+   	width: 430px;
+   	
+   }
+   .year{
+   	font-size: 20px;
+   }
+   .close{
+   	top: 18px;
+   	right: 18px;
+   }
+    h1
+   {
+   	font-size: 16px;
+   }
+   .line{
+   	height: 2px;
+   	margin-top: 9px;
+   }
+
+}
+
+@media screen and (max-width: 980px){
+	.yearevent{
+		max-height: 412px;
+	}
+   .event{
+   	width: 355px;
+   	padding: 15px;
+   	
+   }
+   .year{
+   	font-size: 16px;
+   	top: 23px;
+   }
+   .close{
+   	top: 18px;
+   	right: 18px;
+   }
+   h1{
+   	font-size: 12px;
+   }
+   .line{
+   	height: 2px;
+   	margin-top: 6px;
+   }
+
+
+
+}
+

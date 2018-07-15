@@ -36,7 +36,7 @@ CONTENTS:
 		outline: none;
 		direction: ltr;
 		margin: 0px auto;
-		padding-left: 15px;
+		padding-left: 58px;
 	}
 
 	.mCSB_container{ /* contains the original content */
@@ -1283,4 +1283,19 @@ yx-axis
 
 .mCSB_1_container{
 	top: 85px;
+}
+
+
+
+@media screen and (max-width: 1500px){
+.mCustomScrollBox{
+	padding-left: 44px;
+}
+
+}
+@media screen and (max-width: 1366px){
+.mCustomScrollBox{
+	padding-left: 44px;
+}
+
 }

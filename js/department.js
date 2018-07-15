@@ -270,7 +270,7 @@ function balloval3(ballname, ox, oy, shorto, longo) {
 
 
 		// console.log(x+short);
-	}, 60)
+	}, 40)
 }
 
 
@@ -549,13 +549,21 @@ $(".baller").mouseleave(function() {
 });
 
 $(".baller").click(function() {
+
 	let index = $(".baller").index(this);
+	if(Isclick[index] == false)
+	{
+
+	
 	for (let i = 0; i < 4; i++) {
-		if (index != i) {
+		if (Isclick[i] == true) {
+			
 			closeintro(i);
+
 		}
 
 	}
+
 
 	// $(".depart_intro .intro").eq(index).siblings().
 
@@ -565,10 +573,56 @@ $(".baller").click(function() {
 	}, 200)
 	Isclick[index] = true;
 	cleart(index);
+
+	$(document).one("click",
+		function() { //对document绑定一个影藏Div方法
+			closeintro(index);
+
+		});
+
+	event.stopPropagation(); //阻止事件向上冒泡
 	// $(".depart_intro .intro").eq(index).siblings().
+	}
+
 
 
 })
+ $(".depart_intro .intro").click(function(event) {
+
+        event.stopPropagation(); //阻止事件向上冒泡
+    });
+// var try = document.getElementsByClass("baller")
+// try.addEventListener('click', function(e) {
+
+// 	let index = $(".baller").index(this);
+
+
+// 	$(".depart_intro .intro").eq(index).show();
+// 	$(".depart_intro .intro").eq(index).animate({
+// 		'opacity': '1'
+// 	}, 200)
+// 	Isclick[index] = true;
+// 	cleart(index);
+// 	stop(e);
+// })
+// document.addEventListener('click', function() {
+// 	for (let i = 0; i < 4; i++) {
+// 		if (index != i) {
+// 			closeintro(i);
+
+// 		}
+// 	}
+
+// })
+
+
+// function stop(e) {
+// 	e = e || win.event;
+// 	e.stopPropagation ? e.stopPropagation() :
+// 		e.cancelBubble = true;
+// }
+
+
 //关闭介绍
 $(".depart_intro .close").click(function() {
 	let index = $(".depart_intro .close").index(this)
