@@ -7,16 +7,16 @@
 	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
 </head>
 <body>
-  <div class="container clearfix2">
+  <div class="container">
  <!--    <div class="writewrap" style="display: none;"></div> -->
     <div class="write">
       <div class="close"><img src="../images/close.png" alt=""></div>
-      <div class="header clearfix">
+      <div class="header clearfix3">
         <div class="select_head" >
         <div class="left_arrow"><img src="../images/leftarrow.png" alt=""></div>
-          <div class="head">
+          <div class="head_c">
             
-              <li><img src="../images/head1.png" alt=""></li>
+              <li value="-1"><img src="../images/head1.png" alt=""></li>
               <li><img src="../images/head2.png" alt=""></li>
               <li><img src="../images/head3.png" alt=""></li>
               <li><img src="../images/head4.png" alt=""></li>
@@ -38,7 +38,7 @@
       <div class="text">
         <textarea name="" id="" cols="30" rows="10"></textarea>
       </div>
-      <div class="footer clearfix">
+      <div class="footer clearfix3">
         <div class="verify_tip">(请输入验证码)</div>
         <div class="text_tip">(请不要超过80个字)</div>
         <div class="verify"><input type="text"></div>
@@ -52,24 +52,29 @@
       <h1>留言板</h1>
       <span class="line"></span>
     </div>
+    <input type="text" value="" class="headamount" style="display: none;">
     <div class="body">
         <div class="comments-contain index_topic mCustomScrollbar _mCS_1">
       <div id="mCSB_1" class="mCustomScrollBox mCS-rounded-dots mCSB_vertical mCSB_inside" tabindex="0">
         <div id="mCSB_1_container" class="mCSB_container"  dir="ltr"> 
          
-          <div class="comments clearfix">
-            <div class="head"><img src="../images/head1.png" alt=""></div>
-            <div class="right clearfix">
-              <div class="clearfix"> 
+          <div class="comments clearfix3">
+            <div class="head_c"><img src="../images/head1.png" alt=""></div>
+            <div class="right clearfix3">
+              <div class="righthead clearfix3"> 
                 <div class="id">阿浦爱曼联（临时id）</div>
                 <div class="time">2018年5月13日 16：43</div>
               </div>
              
               <p>ddddddddddddddddddddddddsssssssssssssssssssssssddddddddddddddddddddddddsssssssssssssssssssssssddddddddddddddddddddddddsssssssssssssssssssssssddddddddddddddddddddddddsssssssssssssssssssssssddddddddddddddddddddddddsssssssssssssssssssssssddddddddddddddddddddddddsssssssssssssssssssssss</p>
+              <div class="adminreply clearfix3">
+                <span>回复：</span>
+                <span> ABC的风格</span>
+              </div> 
             </div>
           </div>
-          <div class="comments clearfix">
-          <div class="head"><img src="../images/head2.png" alt=""></div>
+          <div class="comments clearfix3">
+          <div class="head_c"><img src="../images/head2.png" alt=""></div>
           <div class="right clearfix">
             <div class="clearfix" > 
               <div class="id">阿浦爱曼联（临时id）</div>
@@ -80,7 +85,7 @@
           </div>
         </div>
         <div class="comments clearfix">
-          <div class="head"><img src="../images/head2.png" alt=""></div>
+          <div class="head_c"><img src="../images/head2.png" alt=""></div>
           <div class="right clearfix">
             <div class="clearfix" style="margin-bottom: -5px;"> 
               <div class="id">阿浦爱曼联（临时id）</div>
@@ -91,7 +96,7 @@
           </div>
         </div>
         <div class="comments clearfix">
-          <div class="head"><img src="../images/head3.png" alt=""></div>
+          <div class="head_c"><img src="../images/head3.png" alt=""></div>
           <div class="right clearfix">
             <div class="clearfix" style="margin-bottom: -5px;"> 
               <div class="id">阿浦爱曼联（临时id）</div>
@@ -111,10 +116,11 @@
 
   </div>
 </div>
-</body>
-<!-- <script src="../js/jquery-3.2.1.min.js"></script> -->
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script src="../js/mCustomScrollbar.js"></script>
+<script src = "https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="../js/jquery.min.2.1.4.js"></script>
 <script src="../js/comment.js"></script>
+</body>
+
+
 
 </html>

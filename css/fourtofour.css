@@ -1,0 +1,35 @@
+.banqiu{
+	width: auto;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	height: 434px;
+	
+}
+.fourto{
+	position: absolute;
+	width: auto;
+	left: 50%;
+}
+
+.huiji{
+	position: absolute;
+}
+.logo{
+	margin: auto;
+	display: block;
+	margin-top: 100px;
+}
+.sorry{
+	display: block;
+	margin:0px auto;
+
+}
+.return{
+	width: auto;
+	bottom: 0px;
+	display: block;
+	margin:0px auto;
+	/*margin: 30px auto 0px auto;*/
+	cursor: pointer;
+}

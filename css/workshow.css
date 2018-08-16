@@ -1,0 +1,230 @@
+/*.workshow_title{
+	height: 60px;
+
+}
+*/
+.container
+{
+	min-width: 600px;
+	min-height: 360px;
+
+}
+.workshow_title h2{
+	text-align:center;
+	font-size: 28px;
+	font-weight:normal;
+}
+
+.workshow_title .titleline{
+	height:4px;
+	width:60px;
+	background-color:#7ECEF4;
+	margin: 0px auto;
+
+}
+
+.planetandarrow{
+	height: 25.1%;
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:9.3%;
+}
+
+.planetandarrow .planet{
+	height: 100%;
+	position: absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	z-index:1;
+}
+
+.planetandarrow .uparrow{
+	height:8.4%;
+	cursor:pointer;
+	position: absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	top:22.1%;
+	z-index:3;
+}
+
+.planetandarrow .downarrow{
+	height:8.4%;
+	cursor:pointer;
+	position: absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	bottom:24%;
+	z-index:3;
+}
+
+.planetandarrow .webname{
+	/*font-size:1.5rem;*/
+	font-size: 18px;
+	line-height:0;
+	position:absolute;
+	text-align:center; 
+	left:0;
+	right:0;
+	top: 47.5%;
+	z-index:3;
+	color: white;
+}
+
+.show_container{
+	height:47.7%;
+	width: 100%;
+	/* background-color:#F2357E; */
+	position:absolute;
+	bottom:15%;
+	overflow: hidden;
+}
+
+.show_container .circle{
+	height:177.7%;
+	position:absolute;
+	top:7.7%;
+	left:0;
+	right:0;
+	margin:auto;
+}
+
+.show_container .showWeb{
+	border:2px solid #7ECEF4;
+	position:absolute;	
+	border-radius:10px;
+	-moz-border-radius:10px; /* 老的 Firefox */
+	overflow:hidden;
+	display:none;
+}
+
+.show_container .showWeb .webImg{
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+
+.show_container .showWeb .webLink{
+	width:100%;
+	height:100%;
+	background-color: #7ECEF4;
+	opacity:0;
+	position:absolute;
+	
+	transition: opacity 1s;
+	-moz-transition: opacity 1s; /* Firefox 4 */
+	-webkit-transition: opacity 1s; /* Safari 和 Chrome */
+	-o-transition: opacity 1s; /* Opera */
+}
+
+.show_container .showWeb .webLink:hover{
+	opacity:0.6;
+}
+
+.show_container .showWeb .webLinkImg{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+}
+
+.show_container .webInfo{
+	display:none;
+}
+
+/*标题*/
+ .workshow_title h2
+  {
+    margin-top: 60px;
+    font-size: 28px;
+     margin-bottom: 21px;
+     letter-spacing: 2px;
+  }
+  .workshow_title .titleline
+  {
+    width: 60px;
+    height: 4px;
+   
+  }
+
+
+@media screen and (max-width: 1920px ){
+ .workshow_title h2
+  {
+    margin-top: 60px;
+    font-size: 28px;
+     margin-bottom: 21px;
+     letter-spacing: 2px;
+  }
+  .workshow_title .titleline
+  {
+    width: 60px;
+    height: 4px;
+   
+  }
+}
+@media screen and (max-width: 1366px ){
+ .workshow_title h2
+  {
+     margin-top: 41px;
+     font-size: 20px;
+     margin-bottom: 10px;
+     letter-spacing: 2px;
+  }
+  .workshow_title .titleline
+  {
+    width: 42px;
+    height: 2px;
+   
+  }
+}
+@media screen and (max-width: 1280px ){
+ .workshow_title h2
+  {
+     margin-top: 25px;
+     font-size: 17px;
+     margin-bottom: 8px;
+     letter-spacing: 2px;
+  }
+  .workshow_title .titleline
+  {
+    width: 40px;
+    height: 2px;
+   
+  }
+}
+@media screen and (max-width: 980px ){
+ .workshow_title h2
+  {
+     margin-top: 27px;
+     font-size: 14px;
+     margin-bottom: 8px;
+     letter-spacing: 2px;
+  }
+  .workshow_title .titleline
+  {
+    width: 30px;
+    height: 1px;
+   
+  }
+}
+
+@media screen and (max-height: 846px){
+.planetandarrow .webname{
+font-size: 14px;
+}
+@media screen and (max-height: 663px){
+.planetandarrow .webname{
+font-size: 11px;
+}
+@media screen and (max-height: 504px){
+.planetandarrow .webname{
+font-size: 9px;
+}
+

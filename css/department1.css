@@ -1,0 +1,375 @@
+input{
+	outline: none;
+}
+
+li{
+	list-style: none;
+}
+textarea{
+	outline: none;
+}
+button{
+	outline: none;
+}
+.clearfix2::before {
+    content: "";
+    clear: both;
+    display: table;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+*{
+	padding: 0px;
+	margin:0px;
+	font-family: MicrosoftYaHei;
+}
+.container{
+	position: relative;
+	overflow: hidden;
+	background-image: url(../images/department_background.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+}
+/*.back{
+	width: 100%;
+	height: 
+	z-index: 0;
+}*/
+.ball .front_end{
+	width: 11%;
+	height: 8.8%;
+	position: absolute;
+	top: 14.9%;
+	left: 37.05%;
+}
+.ball .front_end img:nth-child(1)
+{
+	width: 60%;
+	height: auto;
+	position: absolute;
+	left: 20%;
+	top: 11%;
+	/*margin-left: -30%;*/
+	/*margin-top: -60px;*/
+	z-index: 300;
+}
+.front_end .black{
+
+	width: 78%;
+	height:95%;
+	position: absolute;
+	left: 11%;
+	top: 3%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.3;
+	z-index: 200;
+	/*display: none;*/
+}
+.ball .ui{
+	width: 9.06%;
+	height: 9.06%;
+	position: absolute;
+	top: 531px;
+	left: 57.44%;
+	/*transform: rotate(-35deg);*/	
+}
+.ball .ui .name{
+	/*margin-left: -41px;*/
+}
+.ui .black{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.5;
+	z-index: 200;
+}
+.ball .ui img:nth-child(1){
+	width: 76%;
+	height: auto;
+	position: absolute;
+	left: 13%;
+	top: 11%;
+	z-index: 300;
+}
+.ball .app{
+	width: 9.06%;
+	height: 9.06%;
+	position: absolute;
+	top: 484px;
+	left: 83.17%;
+}
+.ball .program img:nth-child(1){
+	width: 79%;
+	position: absolute;
+	height: auto;
+	left: 11%;
+	top: 10%;
+	z-index: 300;
+}
+.program .black{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.5;
+	z-index: 200;
+}
+
+.ball .app img:nth-child(1){
+	width: 79%;
+	height: auto;
+	position: absolute;
+	left: 10%;
+	top: 11%;
+	z-index: 300;
+
+}
+.app .black{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	background-color: black;
+	border-radius: 50%;
+	opacity: 0.4;
+	z-index: 200;
+
+}
+
+.ball .front_end img:nth-child(3),.ball .app img:nth-child(3),.ball .ui img:nth-child(3),.ball .program img:nth-child(3){
+	width: 100%;
+	height: auto;
+	
+}
+
+.ball .program
+{
+	width: 9.06%;
+	height: 9.06%;
+	position: absolute;
+	top: 235px;
+	left: 67.8%;
+	
+
+}
+
+.ball .name{
+	position: absolute;
+	bottom: -50px;
+	left: 50%;
+	margin-left: -51px;
+	/*transform: translate(-50%,0);*/
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 2px;
+	color: #ffffff;
+
+}
+.person img{
+	width: 9.2%;
+	height: auto;
+	position: absolute;
+	left: 9.1%;
+	bottom: 17%;
+
+}
+.person img{
+	z-index: 100;
+}
+.ball .black{
+	opacity: 0;
+	/*visibility: hidden;*/
+	display: none;
+}
+.logo{
+	opacity: 0;
+}
+h1{
+
+	font-size: 28px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 2px;
+	color: white;
+	z-index: 300;
+	/*position: absolute;
+	top: 4.8%;
+	left: 50%;
+	margin-left: -59px;*/
+	text-align: center;
+}
+.line{
+	width: 60px;
+	height: 4px;
+	background-color: #face6f;
+	text-align: center;
+	position: absolute;
+	top: 7.3%;
+	left: 50%;
+	margin-left: -30px;
+	z-index: 300;
+
+}
+.person{
+	/*display: none;*/
+	opacity: 0;
+}
+.baller:hover{
+	cursor: pointer;
+}
+
+.ui,.app,.program,.front_end{
+	opacity: 0;
+}
+
+.depart_intro .front_end{
+
+	width: 33.85%;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 50%;
+	margin-left: -15.625%;
+	top: 50%;
+	margin-top: -170px;
+	z-index: 500;
+}
+
+
+.close :hover{
+	cursor: pointer;
+}
+
+.depart_intro .ui{
+
+	width: 33.85%;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 40%;
+	margin-left: -15.625%;
+	top: 50%;
+	margin-top: -170px;
+	z-index: 500;
+}
+
+
+.depart_intro .app{
+
+	width: 33.85%;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 54%;
+	z-index: 500;
+	/*margin-left: -15.625%;*/
+	/*top: 50%;*/
+	/*margin-top: -170px;*/
+}
+.depart_intro .app h3,.depart_intro .ui h3,.depart_intro .program h3,.depart_intro .front_end h3{
+	
+	font-size: 24px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 2px;
+	text-align: center;
+	margin:0px auto;
+	/*margin-top: 65px;*/
+	/*margin-bottom: 50px;*/
+	margin-top: 17.5%;
+	margin-bottom: 14.2%;
+	color: #458bac;
+
+}
+.depart_intro .app p,.depart_intro .ui p,.depart_intro .program p,.depart_intro .front_end p{
+	width: 80%;
+	margin:0px auto;
+	font-size: 18px;
+	/*line-height: 27px;*/
+}
+
+.depart_intro .app .close,.depart_intro .ui .close,.depart_intro .front_end .close,.depart_intro .program .close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 1.84%;
+	
+}
+.depart_intro .app .close img,.depart_intro .ui .close img,.depart_intro .program .close img,.depart_intro .front_end .close img{
+	width: 100%;
+	height: auto;
+}
+.depart_intro .program{
+
+	width: 33.85%;
+	height: 350px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 10px;
+	border: solid 2px rgba(69, 139, 172, 0.85);
+	opacity: 0.85;
+	position: absolute;
+	left: 40%;
+	/*margin-left: -15.625%;*/
+	top: 50%;
+	margin-top: -170px;
+	z-index: 500;
+}
+
+
+@media screen and (max-width: 1400px){
+.depart_intro .app p, .depart_intro .ui p, .depart_intro .program p, .depart_intro .front_end p{
+	font-size: 14px;
+}
+.depart_intro .app h3, .depart_intro .ui h3, .depart_intro .program h3, .depart_intro .front_end h3{
+	font-size: 18px;
+}
+	h1{
+		font-size: 22px;
+	}
+	.ball .name{
+		font-size: 17px;
+		/*margin-left:-35x;*/
+	}
+
+}
+
+@media screen and (max-width: 1250px){
+.depart_intro .app p, .depart_intro .ui p, .depart_intro .program p, .depart_intro .front_end p{
+	font-size: 12px;
+}
+.depart_intro .app h3, .depart_intro .ui h3, .depart_intro .program h3, .depart_intro .front_end h3{
+	font-size: 16px;
+}
+@media screen and (max-width: 1100px){
+.depart_intro .app p, .depart_intro .ui p, .depart_intro .program p, .depart_intro .front_end p{
+	font-size: 11px;
+}
+.depart_intro .app h3, .depart_intro .ui h3, .depart_intro .program h3, .depart_intro .front_end h3{
+	font-size: 16px;
+}
+
+
+}

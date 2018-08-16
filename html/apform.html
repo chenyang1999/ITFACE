@@ -12,17 +12,10 @@
 	<div class="container">
 		<div class="header"></div>
 		<div class="mainer">
-			<div class="logo"><a href=""><img src="../images/logo.png" alt=""></a></div>
+			<div class="logo"><a href="http://222.195.145.152:2018/home/index/"><img src="../images/logo.png" alt=""></a></div>
 			<div class="formheader">爱特工作室2018秋季招新报名表</div>
-			<div class="verify clearfix"  >
-
-				<h2>请输入邮箱中含有的身份码</h2>
-				<div class="inputwrap"><input type="text"></div>
-				<div class="button_1"><button class="verify_check"></button></div>
-				<div class="button_2"><button class="verify_back"></button></div>
-
-			</div>
-			<form class="apform" action="" method="post" id="apform" onsubmit="return false" style="display: none;">
+	
+			<form class="apform" action="" method="post" id="apform" onsubmit="return false" >
 					<div class="formbody">
 						<div class="basic_info">
 							<div class="info_title">姓名</div>
@@ -60,10 +53,11 @@
 						<div class="intention clearfix">
 							<div class="choosehead">请选择意向部门</div>
 							<ul class="clearfix choosebody">
-								<li>前端部门</li>
-								<li>UI部门</li>
-								<li>程序部门</li>
-								<li>安卓部门</li>
+								<li value="1">前端部门</li>
+								<li value="2">UI部门</li>
+								<li value="3">程序部门</li>
+								<li value="4">安卓部门</li>
+								<li value="4">游戏部门</li>
 							</ul>
 						</div>
 						<div style="clear: both;"></div>
@@ -75,16 +69,24 @@
 						</div> 
 						<div class="buttonwrap clearfix">
 							
-							<button class="apform_submit" type="button" onclick="formsubmit()"></button>
+							<button class="apform_submit" ></button>
 							<button class="apform_check" ></button>
 						</div>
 						
 					</div>
 		
 			</form>
-			<div class="processform"  style="display: none;">
+			<div class="verify clearfix"   style="display: none;">
+
+				<h2>请输入邮箱中含有的身份img码</h2>
+				<div class="inputwrap"><input type="text"></div>
+				<div class="button_1"><button class="verify_check"></button></div>
+				<div class="button_2"><button class="verify_back"></button></div>
+
+			</div>
+			<div class="processform" style="display: none;">
 				<div class="info clearfix name">
-					<div class="title">姓名:</div>
+					<div class="title name">姓名:</div>
 					<div class="content">浦则元</div>
 				</div>
 				<div class="info clearfix">
@@ -95,16 +97,14 @@
 					<div class="title">意向部门:</div>
 					<div class="content">UI部门</div>
 				</div>
-				<div class="info clearfix">
-					<div class="title">目前报名状态:</div>
+				<div class="info clearfix2">
+					<div class="title sign">目前报名状态:</div>
 					<div class="state">
 						<div class="line">
 							
 						</div>
 						<div class="dots">
-							<div class="dot"></div>
-							<div class="dot"></div>
-							<div class="dot"></div>
+				
 						</div>
 						<div class="events">
 							<!-- <div class="event">
@@ -127,7 +127,9 @@
 
 					</div>
 				</div>
-				<button class="return"></button>
+			<!-- 兼容ie的promise -->
+				<script src = "https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+				<div class="pbutton_wrap"><button class="processform_return"></button></div>
 			</div>
 		</div>
 	</div>

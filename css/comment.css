@@ -1,3 +1,16 @@
+/* body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} 
+body{background:#fff;color:#333;font-size:12px; margin-top:5px;font-family:"SimSun","宋体","Arial Narrow";} 
+ 
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle;} 
+  */
+/* a{text-decoration:none;} 
+a:link{color:#009;} 
+a:visited{color:#800080;} 
+a:hover,a:active,a:focus{color:#c00;text-decoration:underline;} */
+body{
+	overflow-y:hidden;
+}
 input{
 	outline: none;
 }
@@ -11,12 +24,12 @@ textarea{
 button{
 	outline: none;
 }
-.clearfix2::before {
+.container:before {
     content: "";
     clear: both;
     display: table;
 }
-.clearfix::after {
+.clearfix3:after {
     content: "";
     clear: both;
     display: table;
@@ -24,7 +37,7 @@ button{
 *{
 	padding: 0px;
 	margin:0px;
-	font-family: MicrosoftYaHei;
+	font-family: MicrosoftYaHei,arial,helvetica,clean,sans-serif;
 }
 
 
@@ -52,7 +65,11 @@ button{
 	letter-spacing: 2px;
 	color: #1a1a1a;
 	text-align: center;
-	margin-top: 100px;
+	/*margin-top: 140px;*/
+	    margin-top: 60px;
+    font-size: 28px;
+     margin-bottom: 21px;
+     letter-spacing: 2px;
 }
 .line{
 
@@ -62,12 +79,13 @@ button{
 	
 	display: block;
 	margin: 0px auto;
-	margin-top: 27px;
+	/* margin-top: 27px; */
 }
 
 .index_topic{
 	/*max-width:1120px; */
 	width: 58.3%;
+	/*width: 1120px;*/
 	height:447px; 
 	/*height: 50%;*/
 	margin: 0px auto;
@@ -86,9 +104,9 @@ button{
 	border-radius: 8px;
 	/*border: 1px solid #ffffff;*/
 	margin-bottom: 30px;
-	padding: 0px 0px 2% 8%;
+	padding-bottom: 2%;
 }
-.comments .head{
+.comments .head_c{
 	/*width: 56px;*/
 	width: 5%;
 	height: 82px;
@@ -96,12 +114,12 @@ button{
 	/*margin-left: 90px;*/
 	margin-right: 4.9%;
 	/*margin-right: 55px;*/
-	/*margin-left: 8.05%;*/
+	margin-left: 8.05%;
 	margin-top: 22px;
 	overflow: hidden;
 	
 }
-.comments .head img{
+.comments .head_c img{
 	width: 100%;
 	height: auto;
 	}
@@ -191,6 +209,7 @@ button{
 	width: 170px;
 	height: 51px;
 	z-index: -5;
+	display: none;
 
 
 
@@ -269,7 +288,7 @@ button{
 	width: 100%;
 	height: auto;
 }
-.write .head{
+.write .head_c{
 	float: left;
 	/*width: 45px;*/
 	width: 40.9%;
@@ -280,18 +299,18 @@ button{
 
 
 
-.write .head li{
+.write .head_c li{
 	float: left;
 	/*width: 45px;*/
 
 	/*height: 73px;*/
 	display: none;
 }
-.write .head  li:nth-child(1)
+.write .head_c  li:nth-child(1)
 {
 	display: block;
 }
-.write .head img{
+.write .head_c img{
 	/*width: 45px;*/
 	width: 100%;
 	height: 73px;
@@ -320,15 +339,15 @@ button{
 }
 .write .id input{
 	
-	/*width: 215px;*/
 	width: 97.2%;
 	height: 38px;
 	background-color: #ffffff;
 	border-radius: 10px;
-	border: 1px solid white;
-	font-size: 23px;
+	font-size: 20px;
 	/*padding-left: 4px;*/
 	padding-left: 1.8%;
+	height: 100%;
+	border: none;
 }
 .write .id_tip{
 	float: right;
@@ -358,11 +377,11 @@ button{
 	border-radius: 8px;
 	border: solid 2px #458bac;
 	padding:10px;
-	font-size: 23px;
+	font-size: 20px;
 	outline: none;
-	line-height: 35px;
+	line-height: 32px;
 	overflow: hidden;
-
+	resize: none;
 	
 }
 .write .footer{
@@ -392,18 +411,19 @@ button{
 	/*margin-top: 12px;*/
 	margin-top: 2.1%;
 
+
 }
 .write .verify input{
 	/*width: 112px;*/
 	width: 95%;
 	/*height: 34px;*/
-	height: 88.8%;
+	height: 100%;
 	background-color: #ffffff;
 	border-radius: 8px;
 	/*padding-left: 4px;*/
 	padding-left: 4.4%;
 	border: none;
-	font-size: 23px;
+	font-size: 20px;
 
 
 }
@@ -412,12 +432,15 @@ button{
 	width: 13.7%;
 	height: 40px;
 	/*height: 7.1%;*/
-	background-color: #7ecef4;
+	/*background-color: #7ecef4;*/
 	float: left;
 	/*margin-left: 31px;*/
 	margin-left: 3.55%;
 	/*margin-top: 12px;*/
 	margin-top: 2.1%;
+}
+.verify_img:hover{
+	cursor: pointer;
 }
 .verify_img img{
 	/*width: 120px;*/
@@ -439,8 +462,6 @@ button{
 		#f7e8c6);
 	background-blend-mode: normal, 
 		normal;
-	box-shadow: 0px 4px 4px 0px 
-		rgba(0, 0, 0, 0.09);
 	border-radius: 25px;
 	border: 1px solid #ffffff;
 	font-size: 20px;
@@ -473,167 +494,228 @@ button{
 	/*margin: 0px auto;*/
 	text-align: center;
 }
-
-/*@media screen and (max-width: 1550px)
+.adminreply
 {
-	.comments{
-		width: 718px;
-		min-height: 107px;
-		margin-bottom: 20px;
-	}
-	.comments .head{
-		margin-left: 60px;
-		margin-right: 44px;
-		margin-top: 12px;
-	}
-	.comments .right{
-		width: 533px;
-		margin-top: 11px;
-	}
+	margin-left: 3.6%;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 36px;
+	letter-spacing: 1px;
+	color: #e3ac29;
+}
 
-	.mCSB_inside > .mCSB_container{
-		margin-right: 15px;
-	}
 
-	.header h1{
-		margin-top: 80px;
-	}
-	.line{
-		margin-top: 24px;
-	}
-	.comments .id{
+
+
+@media screen and (max-width: 1920px ){
+  .header h1
+  {
+    margin-top: 60px;
+    font-size: 28px;
+     margin-bottom: 21px;
+     letter-spacing: 2px;
+  }
+  .line
+  {
+    width: 60px;
+    height: 4px;
+   
+  }
+}
+
+@media screen and (max-width: 1500px){
+
+ .comments .id,.comments .time,.make_comment,.write .id input,.write textarea,.write .verify input,.write .submit
+	{
 		font-size: 17px;
 	}
-	p{
+	.comments p,.adminreply,.write .head_tip,.write .id_tip,.write .verify_tip,.text_tip
+	{
+		font-size: 14px;
+	}
+	.write textarea
+	{
+		line-height: 24px;
+	}
+
+}
+
+@media screen and (max-width: 1366px){
+
+	.comments .id,.comments .time,.make_comment,.write .id input,.write textarea,.write .verify input
+	{
+		font-size: 16px;
+	}
+	.comments p,.adminreply,.write .head_tip,.write .id_tip,.write .verify_tip,.text_tip
+	{
+		font-size: 12px;
+	}
+	.comments p
+	{
+		line-height: 20px;
+	}
+		.make_comment
+	{
+		border-radius: 16px;
+	}
+	.write textarea
+	{
+		line-height: 20px;
+	}
+  .header h1
+  {
+     margin-top: 41px;
+     font-size: 20px;
+     margin-bottom: 10px;
+     letter-spacing: 2px;
+  }
+  .line
+  {
+    width: 42px;
+    height: 2px;
+   
+  }
+  .write .id,.write .id input{
+  	border-radius:7px;
+
+  }
+  .write .verif,.write .verif input
+  {
+  	border-radius: 7px;
+  }
+  .write textarea{
+  	padding: 7px;
+  }
+	.write .submit
+	{
+		border-radius: 18px;
 		font-size: 15px;
 	}
-	.comments .time{
-		font-size: 16px;
-		letter-spacing: 1px;
-	}
 
-}*/
-@media screen and (max-width: 1400px){
-	.write .id input{
+}
+
+@media screen and (max-width: 1280px ){
+  .header h1 
+  {
+     margin-top: 25px;
+     font-size: 17px;
+     margin-bottom: 8px;
+     letter-spacing: 2px;
+  }
+  .line
+  {
+    width: 40px;
+    height: 2px;
+   
+  }
+}
+@media screen and (max-width: 1200px){
+
+.comments .id,.comments .time,.make_comment,.write .id input,.write textarea,.write .verify input,.write .submit
+	{
 		font-size: 14px;
 	}
-	.write .verify{
-		font-size: 14px;
+	.comments p,.adminreply,.write .head_tip,.write .id_tip,.write .verify_tip,.text_tip
+	{
+		font-size: 10px;
 	}
-	.write .head_tip{
-		font-size: 13px;
-	}
-	.write .id_tip{
-		font-size: 13px;
-	}
-	.write .verify_tip{
-		font-size: 13px;
-	}
-	.text_tip{
-		font-size: 13px;
-	}
-	.write .submit{
-		font-size: 16px;
-	}
-	.write textarea{
-		font-size: 16px;
+	.write textarea
+	{
 		line-height: 18px;
 	}
-	.comments .id{
-	font-size:16px;
+	.write .id input
+	{
+	border-radius: 5px;
 	}
-	.comments .time{
-		font-size: 16px;
+	.make_comment
+	{
+		border-radius: 13px;
 	}
-	.comments p{
-		font-size: 12px;
-		line-height: 22px;
-	}
-	.make_comment{
-		font-size: 16px;
-	}
-	.header h1{
-		font-size: 23px;
-	}
-	.write .verify input{
-		font-size: 13px;
-	}
+
 }
-/*@media screen and (max-width: 1250px){
-
-	.comments{
-		width: 933px;
-	}
-	.comments .head{
-		margin-left: 55px;
-		margin-right: 34px;
-	}
-	.header h1{
-		margin-top: 80px;
-	}
-	.line{
-		margin-top: 22px;
-	}
-}*/
-
 @media screen and (max-width: 1100px){
-	.write .verify input{
-		font-size: 11px;
-	}
-	.write .id input{
-		font-size: 11px;
-	}
-	.write textarea{
-		font-size: 13px;
-		padding: 7px;
-	}
-	.write .verify{
-		font-size: 11px;
-	}
-	.write .head_tip{
-		font-size: 11px;
-	}
-	.write .id_tip{
-		font-size: 11px;
-	}
-	.write .verify_tip{
-		font-size: 11px;
-	}
-	.text_tip{
-		font-size: 11px;
-	}
-	.write .submit{
-		font-size: 12px;
-	}
-	.write textarea{
-		font-size: 14px;
-	}
-	.comments .id{
-	font-size:14px;
-	}
-	.comments .time{
-		font-size: 14px;
-	}
-	.comments p{
-		font-size: 10px;
-		line-height: 22px;
-	}
-	.make_comment{
-		font-size: 12px;
-	}
-	.header h1{
-		font-size: 21px;
-	}
 
+.make_comment{
+	font-size: 12px;
 }
 
-
-
-@media screen and (max-width: 1000px){
-	.write textarea{
-		font-size: 12px;
+}
+@media screen and (max-width: 980px){
+	.header h1 {
+		font-size: 17px;
+	}
+	.comments .id,.comments .time,.write .id input,.write textarea,.write .verify input,.write .submit
+	{
+		font-size: 11px;
+	}
+	.comments p,.adminreply,.write .head_tip,.write .id_tip,.write .verify_tip,.text_tip
+	{
+		font-size: 8px;
+	}
+	.comments p
+	{
+		line-height: 14px;
+	}
+		.write textarea
+	{
 		line-height: 15px;
 	}
-	
+	.write .id input
+	{
+		
+	} 
+	.header h1
+	  {
+	     margin-top: 27px;
+	     font-size: 14px;
+	     margin-bottom: 8px;
+	     letter-spacing: 2px;
+	  }
+	  .line
+	  {
+	    width: 30px;
+	    height: 1px;
+	   
+	  }
+	.make_comment
+	{
+		font-size: 10px;
+	}
+	.write .verify
+	{
+		border-radius: 6px;
+	}
+	.write .submit
+	{
+		border-radius: 18px;
+		font-size: 11px;
+	}
+	.write .id input,.write textarea,.write .verify input
+	{
+		display: block;
+	}
 
+}
+
+
+@media screen and (max-width: 790px){
+	.make_comment
+	{
+		font-size: 7px;
+		border-radius: 11px;
+	}
+	.comments .id, .comments .time, .write .id input, .write textarea, .write .verify input, .write .submit {
+
+    	font-size: 9px;
+	}
+	.write .submit {
+	    border-radius: 18px;
+	    font-size: 8px;
+	}
+	.write textarea
+	{
+		line-height: 10px;
+	}
+		
 }
